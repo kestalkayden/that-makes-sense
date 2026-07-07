@@ -55,6 +55,13 @@ public final class ModConfig {
         public boolean stackDamage = true;
     }
 
+    public BlackstoneRecipe blackstoneRecipe = new BlackstoneRecipe();
+
+    /** Cobblestone -> Blackstone in a blast furnace. Gated server-side, so a server's setting wins. */
+    public static final class BlackstoneRecipe {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -133,6 +140,9 @@ public final class ModConfig {
         }
         if (enchantmentTweaks == null) {
             enchantmentTweaks = new EnchantmentTweaks();
+        }
+        if (blackstoneRecipe == null) {
+            blackstoneRecipe = new BlackstoneRecipe();
         }
     }
 }

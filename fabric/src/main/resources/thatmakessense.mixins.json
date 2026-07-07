@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_22",
   "minVersion": "0.8",
   "mixins": [
+    "AbstractFurnaceBlockEntityMixin",
     "BlockMixin",
     "ChestBlockEntityMixin",
     "ChestBlockMixin",

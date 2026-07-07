@@ -136,6 +136,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.enchantments.stackDamage.tooltip")),
                     cfg.enchantmentTweaks.stackDamage,
                     val -> ModConfig.get().enchantmentTweaks.stackDamage = val));
+
+            // ---- Cobblestone -> Blackstone ----
+            addHeader("thatmakessense.config.section.blackstoneRecipe");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.blackstoneRecipe.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.blackstoneRecipe.enabled.tooltip")),
+                    cfg.blackstoneRecipe.enabled,
+                    val -> ModConfig.get().blackstoneRecipe.enabled = val));
         }
 
         private void addHeader(String langKey) {

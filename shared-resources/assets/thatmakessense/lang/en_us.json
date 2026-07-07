@@ -13,5 +13,9 @@
   "thatmakessense.config.enchantments.infinityMending": "Infinity + Mending",
   "thatmakessense.config.enchantments.infinityMending.tooltip": "Allow a bow to carry both Infinity and Mending.",
   "thatmakessense.config.enchantments.stackDamage": "Stack Damage Enchantments",
-  "thatmakessense.config.enchantments.stackDamage.tooltip": "Allow the melee damage enchantments (Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach) to coexist on one weapon."
+  "thatmakessense.config.enchantments.stackDamage.tooltip": "Allow the melee damage enchantments (Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach) to coexist on one weapon.",
+
+  "thatmakessense.config.section.blackstoneRecipe": "Cobblestone → Blackstone",
+  "thatmakessense.config.blackstoneRecipe.enabled": "Blast Furnace Makes Blackstone",
+  "thatmakessense.config.blackstoneRecipe.enabled.tooltip": "When on, a blast furnace smelts cobblestone into blackstone (a regular furnace still makes stone). On a server this is decided by the server."
 }
