@@ -25,5 +25,9 @@
 
   "thatmakessense.config.section.noBerryDamage": "No Berry Damage",
   "thatmakessense.config.noBerryDamage.enabled": "No Sweet Berry Bush Damage",
-  "thatmakessense.config.noBerryDamage.enabled.tooltip": "Sweet berry bushes no longer hurt you when you walk through them (mobs still take the damage)."
+  "thatmakessense.config.noBerryDamage.enabled.tooltip": "Sweet berry bushes no longer hurt you when you walk through them (mobs still take the damage).",
+
+  "thatmakessense.config.section.rightClickHarvest": "Right-Click Harvest",
+  "thatmakessense.config.rightClickHarvest.enabled": "Right-Click to Harvest & Replant",
+  "thatmakessense.config.rightClickHarvest.enabled.tooltip": "Right-clicking a fully-grown crop (wheat, carrots, potatoes, beetroot, nether wart) harvests it and replants it in place. Sneak to place blocks instead."
 }

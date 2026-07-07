@@ -163,6 +163,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.noBerryDamage.enabled.tooltip")),
                     cfg.noBerryDamage.enabled,
                     val -> ModConfig.get().noBerryDamage.enabled = val));
+
+            // ---- Right-Click Harvest ----
+            addHeader("thatmakessense.config.section.rightClickHarvest");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.rightClickHarvest.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.rightClickHarvest.enabled.tooltip")),
+                    cfg.rightClickHarvest.enabled,
+                    val -> ModConfig.get().rightClickHarvest.enabled = val));
         }
 
         private void addHeader(String langKey) {

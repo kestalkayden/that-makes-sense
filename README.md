@@ -16,6 +16,7 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Cobblestone → Blackstone** | on | Blasting cobblestone in a **blast furnace** yields blackstone (a regular furnace still makes stone). Makes blackstone renewable. Gated server-side. |
 | **Double Doors** | on | Opening one door of a matching pair opens both, like a real double door. Iron doors left to redstone. |
 | **No Berry Damage** | on | Sweet berry bushes no longer hurt you when you walk through them (mobs still take it). |
+| **Right-Click Harvest** | on | Right-clicking a fully-grown crop (wheat, carrots, potatoes, beetroot, nether wart) harvests and replants it in place. Sneak to place blocks instead. |
 
 More on the way, one at a time.
 

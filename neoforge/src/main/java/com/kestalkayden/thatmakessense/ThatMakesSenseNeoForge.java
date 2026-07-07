@@ -8,8 +8,10 @@ import com.kestalkayden.thatmakessense.config.ModConfig;
 import com.kestalkayden.thatmakessense.feature.CopperChestMenus;
 import com.kestalkayden.thatmakessense.feature.DoubleDoors;
 import com.kestalkayden.thatmakessense.feature.NoBerryDamage;
+import com.kestalkayden.thatmakessense.feature.RightClickHarvest;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.api.distmarker.Dist;
@@ -70,6 +72,11 @@ public class ThatMakesSenseNeoForge {
     }
 
     private static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+        if (RightClickHarvest.tryHarvest(event.getLevel(), event.getPos(), event.getEntity(), event.getHand())) {
+            event.setCanceled(true);
+            event.setCancellationResult(InteractionResult.SUCCESS);
+            return;
+        }
         DoubleDoors.onDoorUse(event.getLevel(), event.getPos(), event.getEntity(), event.getHand());
     }
 

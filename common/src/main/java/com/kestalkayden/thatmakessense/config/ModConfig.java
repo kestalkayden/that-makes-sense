@@ -76,6 +76,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public RightClickHarvest rightClickHarvest = new RightClickHarvest();
+
+    /** Right-clicking a mature crop harvests it and replants it in place. */
+    public static final class RightClickHarvest {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -163,6 +170,9 @@ public final class ModConfig {
         }
         if (noBerryDamage == null) {
             noBerryDamage = new NoBerryDamage();
+        }
+        if (rightClickHarvest == null) {
+            rightClickHarvest = new RightClickHarvest();
         }
     }
 }

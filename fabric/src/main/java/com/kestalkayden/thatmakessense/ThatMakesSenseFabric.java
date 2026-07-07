@@ -7,6 +7,7 @@ import com.kestalkayden.thatmakessense.config.ModConfig;
 import com.kestalkayden.thatmakessense.feature.CopperChestMenus;
 import com.kestalkayden.thatmakessense.feature.DoubleDoors;
 import com.kestalkayden.thatmakessense.feature.NoBerryDamage;
+import com.kestalkayden.thatmakessense.feature.RightClickHarvest;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
@@ -42,9 +43,12 @@ public class ThatMakesSenseFabric implements ModInitializer {
             Identifier.fromNamespaceAndPath(MOD_ID, "copper_double"),
             menu);
 
-        // Double Doors: forward every block right-click to the shared logic (never consumes it, so
-        // vanilla still toggles the clicked door - we only add the partner mirror).
+        // Block right-clicks: try harvesting a mature crop first (consumes the click), otherwise mirror
+        // double doors (never consumes - vanilla still toggles the clicked door).
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+            if (RightClickHarvest.tryHarvest(world, hitResult.getBlockPos(), player, hand)) {
+                return InteractionResult.SUCCESS;
+            }
             DoubleDoors.onDoorUse(world, hitResult.getBlockPos(), player, hand);
             return InteractionResult.PASS;
         });
