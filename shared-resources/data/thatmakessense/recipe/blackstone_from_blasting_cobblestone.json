@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": "minecraft:cobblestone",
+  "result": {
+    "id": "minecraft:blackstone"
+  },
+  "experience": 0.1
+}
