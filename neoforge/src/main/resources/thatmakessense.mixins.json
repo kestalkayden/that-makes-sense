@@ -6,7 +6,8 @@
   "mixins": [
     "BlockMixin",
     "ChestBlockEntityMixin",
-    "ChestBlockMixin"
+    "ChestBlockMixin",
+    "EnchantmentMixin"
   ],
   "injectors": {
     "defaultRequire": 1

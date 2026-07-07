@@ -121,6 +121,21 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.silkTouchBudding.enabled.tooltip")),
                     cfg.silkTouchBudding.enabled,
                     val -> ModConfig.get().silkTouchBudding.enabled = val));
+
+            // ---- Enchantments ----
+            addHeader("thatmakessense.config.section.enchantments");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.enchantments.infinityMending",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.enchantments.infinityMending.tooltip")),
+                    cfg.enchantmentTweaks.infinityMending,
+                    val -> ModConfig.get().enchantmentTweaks.infinityMending = val));
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.enchantments.stackDamage",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.enchantments.stackDamage.tooltip")),
+                    cfg.enchantmentTweaks.stackDamage,
+                    val -> ModConfig.get().enchantmentTweaks.stackDamage = val));
         }
 
         private void addHeader(String langKey) {

@@ -45,6 +45,16 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public EnchantmentTweaks enchantmentTweaks = new EnchantmentTweaks();
+
+    /** Lifts vanilla enchantment mutual-exclusivity for a couple of common combos. */
+    public static final class EnchantmentTweaks {
+        /** Allow Infinity and Mending together on a bow. */
+        public boolean infinityMending = true;
+        /** Allow the melee damage enchantments (Sharpness, Smite, ...) to coexist on one weapon. */
+        public boolean stackDamage = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -120,6 +130,9 @@ public final class ModConfig {
         }
         if (silkTouchBudding == null) {
             silkTouchBudding = new SilkTouchBudding();
+        }
+        if (enchantmentTweaks == null) {
+            enchantmentTweaks = new EnchantmentTweaks();
         }
     }
 }

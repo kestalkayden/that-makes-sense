@@ -11,6 +11,8 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **No Crop Trample** | on | Farmland no longer reverts to dirt when players, mobs, or projectiles land on it. Fall damage still applies. |
 | **Copper Chest Rows** | always | A single copper chest holds 4 rows (36 slots); a double copper chest holds 8 rows (72 slots), with a custom screen. Not toggleable — resizing chests is one-way, so this avoids ever dropping items. |
 | **Silk Touch → Budding Amethyst** | on | A Silk Touch tool harvests budding amethyst blocks (vanilla drops nothing), making amethyst geodes renewable. |
+| **Infinity + Mending** | on | Allow both enchantments on one bow. |
+| **Stack Damage Enchantments** | on | Allow the melee damage enchantments (Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach) to coexist on one weapon. |
 
 More on the way, one at a time.
 
