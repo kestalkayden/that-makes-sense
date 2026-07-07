@@ -18,6 +18,9 @@
     "main": [
       "com.kestalkayden.thatmakessense.ThatMakesSenseFabric"
     ],
+    "client": [
+      "com.kestalkayden.thatmakessense.client.ThatMakesSenseFabricClient"
+    ],
     "modmenu": [
       "com.kestalkayden.thatmakessense.client.ModMenuIntegration"
     ]

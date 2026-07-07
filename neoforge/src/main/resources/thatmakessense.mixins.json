@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_22",
   "minVersion": "0.8",
   "mixins": [
-    "ChestBlockEntityMixin"
+    "ChestBlockEntityMixin",
+    "ChestBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
