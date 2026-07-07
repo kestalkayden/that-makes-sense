@@ -112,15 +112,6 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.noCropTrample.enabled.tooltip")),
                     cfg.noCropTrample.enabled,
                     val -> ModConfig.get().noCropTrample.enabled = val));
-
-            // ---- Copper Chest Rows ----
-            addHeader("thatmakessense.config.section.copperChest");
-            addOption(OptionInstance.createBoolean(
-                    "thatmakessense.config.copperChest.enabled",
-                    OptionInstance.cachedConstantTooltip(
-                            Component.translatable("thatmakessense.config.copperChest.enabled.tooltip")),
-                    cfg.copperChest.enabled,
-                    val -> ModConfig.get().copperChest.enabled = val));
         }
 
         private void addHeader(String langKey) {

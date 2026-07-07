@@ -29,10 +29,10 @@ import net.minecraft.world.level.block.state.properties.ChestType;
  * {@code ChestMenu.checkContainerSize} once each half reports 36 slots).
  *
  * <p>Injects at the head of {@link ChestBlock#getMenuProvider} - a stable, overridable method - rather
- * than the anonymous menu-provider combiner. Only takes over when both halves are enlarged (combined
- * size == 72); otherwise it defers to vanilla, so a pair opened while the feature was off stays a
- * normal 6-row double. The provider mirrors vanilla's double-open logic (lock check, loot unpacking,
- * combined display name) but hands back {@link CopperChestMenus#createServerMenu} at 8 rows.
+ * than the anonymous menu-provider combiner. Copper chests are always enlarged, so a copper double
+ * always combines to 72 slots; the size guard below is defensive (only take over on an exact 72,
+ * otherwise defer to vanilla). The provider mirrors vanilla's double-open logic (lock check, loot
+ * unpacking, combined display name) but hands back {@link CopperChestMenus#createServerMenu} at 8 rows.
  */
 @Mixin(ChestBlock.class)
 public abstract class ChestBlockMixin {
@@ -40,10 +40,9 @@ public abstract class ChestBlockMixin {
     @Inject(method = "getMenuProvider", at = @At("HEAD"), cancellable = true)
     private void thatmakessense$copperDoubleMenu(
             BlockState state, Level level, BlockPos pos, CallbackInfoReturnable<MenuProvider> cir) {
-        // Driven off the frozen combined size (below), never live config: a chest's size is fixed at
-        // construction, so a pair enlarged while the feature was on must still open at 8 rows even if
-        // the feature was toggled off afterwards - otherwise vanilla's 6-row menu would reject the 72
-        // slots. New behaviour applies on reload, matching ChestBlockEntityMixin.
+        // Copper chests are always enlarged, so a copper double always combines to 72 slots. The size
+        // check further down is a defensive guard - take over only on an exact 72, otherwise defer to
+        // vanilla's 6-row menu rather than risk a size mismatch.
         if (!(state.getBlock() instanceof CopperChestBlock) || state.getValue(ChestBlock.TYPE) == ChestType.SINGLE) {
             return;
         }

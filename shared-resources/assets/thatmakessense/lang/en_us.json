@@ -3,9 +3,5 @@
 
   "thatmakessense.config.section.noCropTrample": "No Crop Trample",
   "thatmakessense.config.noCropTrample.enabled": "Prevent Crop Trampling",
-  "thatmakessense.config.noCropTrample.enabled.tooltip": "When on, farmland never reverts to dirt when players, mobs, or projectiles land on it. Fall damage still applies.",
-
-  "thatmakessense.config.section.copperChest": "Copper Chest Rows",
-  "thatmakessense.config.copperChest.enabled": "Bigger Copper Chests",
-  "thatmakessense.config.copperChest.enabled.tooltip": "When on, a single copper chest holds 4 rows (36 slots) and a double copper chest holds 8 rows (72 slots). Takes effect on world reload."
+  "thatmakessense.config.noCropTrample.enabled.tooltip": "When on, farmland never reverts to dirt when players, mobs, or projectiles land on it. Fall damage still applies."
 }

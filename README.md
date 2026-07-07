@@ -9,7 +9,7 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | Feature | Default | What it does |
 |---|---|---|
 | **No Crop Trample** | on | Farmland no longer reverts to dirt when players, mobs, or projectiles land on it. Fall damage still applies. |
-| **Copper Chest Rows** | on | A single copper chest holds 4 rows (36 slots); a double copper chest holds 8 rows (72 slots), with a custom screen. Takes effect on world reload. |
+| **Copper Chest Rows** | always | A single copper chest holds 4 rows (36 slots); a double copper chest holds 8 rows (72 slots), with a custom screen. Not toggleable — resizing chests is one-way, so this avoids ever dropping items. |
 
 More on the way, one at a time.
 
