@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.kestalkayden.thatmakessense.mixin",
+  "compatibilityLevel": "JAVA_22",
+  "minVersion": "0.8",
+  "mixins": [
+    "FarmlandBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "thatmakessense.config.title": "That Makes Sense",
+
+  "thatmakessense.config.section.noCropTrample": "No Crop Trample",
+  "thatmakessense.config.noCropTrample.enabled": "Prevent Crop Trampling",
+  "thatmakessense.config.noCropTrample.enabled.tooltip": "When on, farmland never reverts to dirt when players, mobs, or projectiles land on it. Fall damage still applies."
+}

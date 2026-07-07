@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="CC0-1.0"
+issueTrackerURL="https://github.com/kestalkayden/that-makes-sense/issues"
+
+[[mods]]
+modId="thatmakessense"
+version="${version}"
+displayName="That Makes Sense"
+description='''
+A collection of quality-of-life tweaks that make Minecraft behave the way you'd expect.
+'''
+authors="Kestalkayden"
+displayURL="https://github.com/kestalkayden/that-makes-sense"
+logoFile="assets/thatmakessense/icon.png"
+
+[[dependencies.thatmakessense]]
+modId="neoforge"
+type="required"
+versionRange="[26.2.0.0-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.thatmakessense]]
+modId="minecraft"
+type="required"
+versionRange="[26.2,26.3)"
+ordering="NONE"
+side="BOTH"

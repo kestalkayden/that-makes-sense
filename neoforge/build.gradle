@@ -1,0 +1,66 @@
+plugins {
+    id 'net.neoforged.moddev' version "${moddev_version}"
+    id 'maven-publish'
+}
+
+base {
+    archivesName = "${project.archives_base_name}-neoforge"
+}
+
+// Shared code from :common, compiled into this jar against NeoForge's Minecraft view. NeoForge has
+// no split source sets - both the loader-agnostic config (main) and the client-only config screen
+// (client) go into main; the screen is only ever reached via a Dist.CLIENT-guarded call.
+sourceSets.main.java.srcDir "${rootProject.projectDir}/common/src/main/java"
+sourceSets.main.java.srcDir "${rootProject.projectDir}/common/src/client/java"
+
+neoForge {
+    version = neoforge_version
+    validateAccessTransformers = false
+
+    mods {
+        thatmakessense {
+            sourceSet sourceSets.main
+        }
+    }
+
+    runs {
+        client { client() }
+        server { server() }
+        data { data() }
+    }
+}
+
+processResources {
+    inputs.property "version", project.version
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    from('../shared-resources') {
+        exclude '**/*.java'
+    }
+
+    filesMatching("META-INF/neoforge.mods.toml") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+}
+
+java {
+    withSourcesJar()
+}
+
+jar {
+    from("../LICENSE") {
+        rename { "${it}_${base.archivesName.get()}" }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
