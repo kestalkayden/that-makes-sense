@@ -3,6 +3,7 @@ package com.kestalkayden.thatmakessense;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.kestalkayden.thatmakessense.client.ThatMakesSenseNeoForgeClient;
 import com.kestalkayden.thatmakessense.config.ModConfig;
 
 import net.neoforged.api.distmarker.Dist;
