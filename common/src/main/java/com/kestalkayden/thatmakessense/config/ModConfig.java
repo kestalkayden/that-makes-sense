@@ -38,6 +38,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public SilkTouchBudding silkTouchBudding = new SilkTouchBudding();
+
+    /** Silk Touch -> Budding Amethyst: a Silk Touch tool harvests budding amethyst blocks. */
+    public static final class SilkTouchBudding {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -110,6 +117,9 @@ public final class ModConfig {
     private void fillMissing() {
         if (noCropTrample == null) {
             noCropTrample = new NoCropTrample();
+        }
+        if (silkTouchBudding == null) {
+            silkTouchBudding = new SilkTouchBudding();
         }
     }
 }

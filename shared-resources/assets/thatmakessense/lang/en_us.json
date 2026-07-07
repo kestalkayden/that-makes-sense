@@ -3,5 +3,9 @@
 
   "thatmakessense.config.section.noCropTrample": "No Crop Trample",
   "thatmakessense.config.noCropTrample.enabled": "Prevent Crop Trampling",
-  "thatmakessense.config.noCropTrample.enabled.tooltip": "When on, farmland never reverts to dirt when players, mobs, or projectiles land on it. Fall damage still applies."
+  "thatmakessense.config.noCropTrample.enabled.tooltip": "When on, farmland never reverts to dirt when players, mobs, or projectiles land on it. Fall damage still applies.",
+
+  "thatmakessense.config.section.silkTouchBudding": "Silk Touch Budding Amethyst",
+  "thatmakessense.config.silkTouchBudding.enabled": "Silk Touch Harvests Budding Amethyst",
+  "thatmakessense.config.silkTouchBudding.enabled.tooltip": "When on, mining a budding amethyst block with a Silk Touch tool drops the block, making amethyst geodes renewable."
 }

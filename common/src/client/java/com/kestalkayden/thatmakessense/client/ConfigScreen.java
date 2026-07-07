@@ -112,6 +112,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.noCropTrample.enabled.tooltip")),
                     cfg.noCropTrample.enabled,
                     val -> ModConfig.get().noCropTrample.enabled = val));
+
+            // ---- Silk Touch -> Budding Amethyst ----
+            addHeader("thatmakessense.config.section.silkTouchBudding");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.silkTouchBudding.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.silkTouchBudding.enabled.tooltip")),
+                    cfg.silkTouchBudding.enabled,
+                    val -> ModConfig.get().silkTouchBudding.enabled = val));
         }
 
         private void addHeader(String langKey) {
