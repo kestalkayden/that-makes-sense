@@ -13,7 +13,9 @@
     "EndermanLeaveBlockGoalMixin",
     "EndermanTakeBlockGoalMixin",
     "FarmlandBlockMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "PhantomSpawnerMixin",
+    "TamableAnimalMixin"
   ],
   "injectors": {
     "defaultRequire": 1

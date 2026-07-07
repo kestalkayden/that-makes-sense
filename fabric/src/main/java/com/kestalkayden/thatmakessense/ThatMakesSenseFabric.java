@@ -7,6 +7,7 @@ import com.kestalkayden.thatmakessense.config.ModConfig;
 import com.kestalkayden.thatmakessense.feature.CopperChestMenus;
 import com.kestalkayden.thatmakessense.feature.DoubleDoors;
 import com.kestalkayden.thatmakessense.feature.NoBerryDamage;
+import com.kestalkayden.thatmakessense.feature.NoEnderPearlDamage;
 import com.kestalkayden.thatmakessense.feature.RightClickHarvest;
 
 import net.fabricmc.api.ModInitializer;
@@ -53,8 +54,8 @@ public class ThatMakesSenseFabric implements ModInitializer {
             return InteractionResult.PASS;
         });
 
-        // No Berry Damage: returning false disallows the incoming damage.
-        ServerLivingEntityEvents.ALLOW_DAMAGE.register(
-            (entity, source, amount) -> !NoBerryDamage.shouldCancel(source, entity));
+        // No Berry Damage + No Ender Pearl Damage: returning false disallows the incoming damage.
+        ServerLivingEntityEvents.ALLOW_DAMAGE.register((entity, source, amount) ->
+            !(NoBerryDamage.shouldCancel(source, entity) || NoEnderPearlDamage.shouldCancel(source)));
     }
 }

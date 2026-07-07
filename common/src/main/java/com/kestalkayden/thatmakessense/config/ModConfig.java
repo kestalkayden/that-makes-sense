@@ -104,6 +104,27 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public DisablePhantoms disablePhantoms = new DisablePhantoms();
+
+    /** Phantoms never spawn from insomnia. */
+    public static final class DisablePhantoms {
+        public boolean enabled = true;
+    }
+
+    public NoPetTeleportDamage noPetTeleportDamage = new NoPetTeleportDamage();
+
+    /** Tamed pets take no fall damage when they teleport to their owner. */
+    public static final class NoPetTeleportDamage {
+        public boolean enabled = true;
+    }
+
+    public NoEnderPearlDamage noEnderPearlDamage = new NoEnderPearlDamage();
+
+    /** Throwing an ender pearl no longer deals teleport damage. */
+    public static final class NoEnderPearlDamage {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -203,6 +224,15 @@ public final class ModConfig {
         }
         if (totemFromInventory == null) {
             totemFromInventory = new TotemFromInventory();
+        }
+        if (disablePhantoms == null) {
+            disablePhantoms = new DisablePhantoms();
+        }
+        if (noPetTeleportDamage == null) {
+            noPetTeleportDamage = new NoPetTeleportDamage();
+        }
+        if (noEnderPearlDamage == null) {
+            noEnderPearlDamage = new NoEnderPearlDamage();
         }
     }
 }

@@ -199,6 +199,33 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.totemFromInventory.enabled.tooltip")),
                     cfg.totemFromInventory.enabled,
                     val -> ModConfig.get().totemFromInventory.enabled = val));
+
+            // ---- Disable Phantoms ----
+            addHeader("thatmakessense.config.section.disablePhantoms");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.disablePhantoms.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.disablePhantoms.enabled.tooltip")),
+                    cfg.disablePhantoms.enabled,
+                    val -> ModConfig.get().disablePhantoms.enabled = val));
+
+            // ---- No Pet Teleport Damage ----
+            addHeader("thatmakessense.config.section.noPetTeleportDamage");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noPetTeleportDamage.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noPetTeleportDamage.enabled.tooltip")),
+                    cfg.noPetTeleportDamage.enabled,
+                    val -> ModConfig.get().noPetTeleportDamage.enabled = val));
+
+            // ---- No Ender Pearl Damage ----
+            addHeader("thatmakessense.config.section.noEnderPearlDamage");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noEnderPearlDamage.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noEnderPearlDamage.enabled.tooltip")),
+                    cfg.noEnderPearlDamage.enabled,
+                    val -> ModConfig.get().noEnderPearlDamage.enabled = val));
         }
 
         private void addHeader(String langKey) {

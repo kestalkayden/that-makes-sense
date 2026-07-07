@@ -12,7 +12,9 @@
     "EnchantmentMixin",
     "EndermanLeaveBlockGoalMixin",
     "EndermanTakeBlockGoalMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "PhantomSpawnerMixin",
+    "TamableAnimalMixin"
   ],
   "injectors": {
     "defaultRequire": 1

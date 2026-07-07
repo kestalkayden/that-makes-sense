@@ -20,6 +20,9 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **No Creeper Block Damage** | on | Creeper explosions still hurt entities but leave terrain intact. |
 | **No Enderman Griefing** | on | Endermen no longer pick up or place blocks. |
 | **Totem from Inventory** | on | A Totem of Undying saves you from anywhere in the inventory, not just a hand. |
+| **Disable Phantoms** | on | Phantoms never spawn from insomnia (spawn eggs/commands still work). |
+| **No Pet Teleport Damage** | on | Tamed pets take no fall damage teleporting to you. |
+| **No Ender Pearl Damage** | on | Throwing an ender pearl no longer deals teleport damage. |
 
 More on the way, one at a time.
 
