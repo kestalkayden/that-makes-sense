@@ -145,6 +145,24 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.blackstoneRecipe.enabled.tooltip")),
                     cfg.blackstoneRecipe.enabled,
                     val -> ModConfig.get().blackstoneRecipe.enabled = val));
+
+            // ---- Double Doors ----
+            addHeader("thatmakessense.config.section.doubleDoors");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.doubleDoors.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.doubleDoors.enabled.tooltip")),
+                    cfg.doubleDoors.enabled,
+                    val -> ModConfig.get().doubleDoors.enabled = val));
+
+            // ---- No Berry Damage ----
+            addHeader("thatmakessense.config.section.noBerryDamage");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noBerryDamage.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noBerryDamage.enabled.tooltip")),
+                    cfg.noBerryDamage.enabled,
+                    val -> ModConfig.get().noBerryDamage.enabled = val));
         }
 
         private void addHeader(String langKey) {

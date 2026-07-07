@@ -62,6 +62,20 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public DoubleDoors doubleDoors = new DoubleDoors();
+
+    /** Opening one door of a matching pair opens both. */
+    public static final class DoubleDoors {
+        public boolean enabled = true;
+    }
+
+    public NoBerryDamage noBerryDamage = new NoBerryDamage();
+
+    /** Sweet berry bushes stop hurting players. */
+    public static final class NoBerryDamage {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -143,6 +157,12 @@ public final class ModConfig {
         }
         if (blackstoneRecipe == null) {
             blackstoneRecipe = new BlackstoneRecipe();
+        }
+        if (doubleDoors == null) {
+            doubleDoors = new DoubleDoors();
+        }
+        if (noBerryDamage == null) {
+            noBerryDamage = new NoBerryDamage();
         }
     }
 }

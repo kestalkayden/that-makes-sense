@@ -14,6 +14,8 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Infinity + Mending** | on | Allow both enchantments on one bow. |
 | **Stack Damage Enchantments** | on | Allow the melee damage enchantments (Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach) to coexist on one weapon. |
 | **Cobblestone → Blackstone** | on | Blasting cobblestone in a **blast furnace** yields blackstone (a regular furnace still makes stone). Makes blackstone renewable. Gated server-side. |
+| **Double Doors** | on | Opening one door of a matching pair opens both, like a real double door. Iron doors left to redstone. |
+| **No Berry Damage** | on | Sweet berry bushes no longer hurt you when you walk through them (mobs still take it). |
 
 More on the way, one at a time.
 

@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory;
 import com.kestalkayden.thatmakessense.client.ThatMakesSenseNeoForgeClient;
 import com.kestalkayden.thatmakessense.config.ModConfig;
 import com.kestalkayden.thatmakessense.feature.CopperChestMenus;
+import com.kestalkayden.thatmakessense.feature.DoubleDoors;
+import com.kestalkayden.thatmakessense.feature.NoBerryDamage;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.ChestMenu;
@@ -19,6 +21,8 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -42,6 +46,10 @@ public class ThatMakesSenseNeoForge {
 
         // No Crop Trample: cancel the vanilla trample so farmland keeps its crops.
         NeoForge.EVENT_BUS.addListener(ThatMakesSenseNeoForge::onFarmlandTrample);
+        // Double Doors: mirror a door right-click onto its neighbour.
+        NeoForge.EVENT_BUS.addListener(ThatMakesSenseNeoForge::onRightClickBlock);
+        // No Berry Damage: cancel sweet-berry-bush damage to players.
+        NeoForge.EVENT_BUS.addListener(ThatMakesSenseNeoForge::onLivingIncomingDamage);
 
         // Copper Chest Rows: register the shared 8-row menu type used by double copper chests, then
         // hand the registered type to the loader-agnostic holder once the registry is populated.
@@ -57,6 +65,16 @@ public class ThatMakesSenseNeoForge {
 
     private static void onFarmlandTrample(BlockEvent.FarmlandTrampleEvent event) {
         if (ModConfig.get().shouldPreventTrampling(event.getEntity())) {
+            event.setCanceled(true);
+        }
+    }
+
+    private static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+        DoubleDoors.onDoorUse(event.getLevel(), event.getPos(), event.getEntity(), event.getHand());
+    }
+
+    private static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {
+        if (NoBerryDamage.shouldCancel(event.getSource(), event.getEntity())) {
             event.setCanceled(true);
         }
     }

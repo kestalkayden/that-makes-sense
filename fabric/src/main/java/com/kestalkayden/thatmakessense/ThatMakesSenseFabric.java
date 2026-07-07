@@ -5,12 +5,17 @@ import org.slf4j.LoggerFactory;
 
 import com.kestalkayden.thatmakessense.config.ModConfig;
 import com.kestalkayden.thatmakessense.feature.CopperChestMenus;
+import com.kestalkayden.thatmakessense.feature.DoubleDoors;
+import com.kestalkayden.thatmakessense.feature.NoBerryDamage;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -25,8 +30,9 @@ public class ThatMakesSenseFabric implements ModInitializer {
         LOGGER.info("Initializing That Makes Sense (Fabric)");
         ModConfig.load(FabricLoader.getInstance().getConfigDir());
 
-        // No Crop Trample is applied by FarmlandBlockMixin; Copper Chest Rows (single) by
-        // ChestBlockEntityMixin. Both consult ModConfig at runtime.
+        // No Crop Trample is applied by FarmlandBlockMixin, Copper Chest Rows by ChestBlockEntity/
+        // ChestBlock mixins, and the enchantment / silk-touch / blackstone tweaks by their mixins.
+        // Those all consult ModConfig at runtime.
 
         // Copper Chest Rows (double): register the shared 8-row menu type. The screen is bound
         // client-side in ThatMakesSenseFabricClient; the server builds the menu in ChestBlockMixin.
@@ -35,5 +41,16 @@ public class ThatMakesSenseFabric implements ModInitializer {
             BuiltInRegistries.MENU,
             Identifier.fromNamespaceAndPath(MOD_ID, "copper_double"),
             menu);
+
+        // Double Doors: forward every block right-click to the shared logic (never consumes it, so
+        // vanilla still toggles the clicked door - we only add the partner mirror).
+        UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+            DoubleDoors.onDoorUse(world, hitResult.getBlockPos(), player, hand);
+            return InteractionResult.PASS;
+        });
+
+        // No Berry Damage: returning false disallows the incoming damage.
+        ServerLivingEntityEvents.ALLOW_DAMAGE.register(
+            (entity, source, amount) -> !NoBerryDamage.shouldCancel(source, entity));
     }
 }

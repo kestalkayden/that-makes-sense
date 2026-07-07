@@ -17,5 +17,13 @@
 
   "thatmakessense.config.section.blackstoneRecipe": "Cobblestone → Blackstone",
   "thatmakessense.config.blackstoneRecipe.enabled": "Blast Furnace Makes Blackstone",
-  "thatmakessense.config.blackstoneRecipe.enabled.tooltip": "When on, a blast furnace smelts cobblestone into blackstone (a regular furnace still makes stone). On a server this is decided by the server."
+  "thatmakessense.config.blackstoneRecipe.enabled.tooltip": "When on, a blast furnace smelts cobblestone into blackstone (a regular furnace still makes stone). On a server this is decided by the server.",
+
+  "thatmakessense.config.section.doubleDoors": "Double Doors",
+  "thatmakessense.config.doubleDoors.enabled": "Open Double Doors Together",
+  "thatmakessense.config.doubleDoors.enabled.tooltip": "Opening one door of a matching pair opens both, like a real double door. Iron doors are left to redstone.",
+
+  "thatmakessense.config.section.noBerryDamage": "No Berry Damage",
+  "thatmakessense.config.noBerryDamage.enabled": "No Sweet Berry Bush Damage",
+  "thatmakessense.config.noBerryDamage.enabled.tooltip": "Sweet berry bushes no longer hurt you when you walk through them (mobs still take the damage)."
 }
