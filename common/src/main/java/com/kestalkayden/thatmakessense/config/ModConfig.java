@@ -83,6 +83,27 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public NoCreeperBlockDamage noCreeperBlockDamage = new NoCreeperBlockDamage();
+
+    /** Creeper explosions hurt entities but leave terrain intact. */
+    public static final class NoCreeperBlockDamage {
+        public boolean enabled = true;
+    }
+
+    public NoEndermanGriefing noEndermanGriefing = new NoEndermanGriefing();
+
+    /** Endermen no longer pick up or place blocks. */
+    public static final class NoEndermanGriefing {
+        public boolean enabled = true;
+    }
+
+    public TotemFromInventory totemFromInventory = new TotemFromInventory();
+
+    /** A Totem of Undying works from anywhere in the inventory, not just a hand. */
+    public static final class TotemFromInventory {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -173,6 +194,15 @@ public final class ModConfig {
         }
         if (rightClickHarvest == null) {
             rightClickHarvest = new RightClickHarvest();
+        }
+        if (noCreeperBlockDamage == null) {
+            noCreeperBlockDamage = new NoCreeperBlockDamage();
+        }
+        if (noEndermanGriefing == null) {
+            noEndermanGriefing = new NoEndermanGriefing();
+        }
+        if (totemFromInventory == null) {
+            totemFromInventory = new TotemFromInventory();
         }
     }
 }

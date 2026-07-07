@@ -14,10 +14,11 @@ base {
 sourceSets.main.java.srcDir "src/client/java"
 
 dependencies {
-    // Compile-only Mixin annotations so shared mixins (e.g. ChestBlockEntityMixin) type-check in the
-    // purity gate. Each loader supplies the real Mixin at runtime - Fabric Loader and NeoForge both
-    // bundle it - so nothing here is shipped.
+    // Compile-only Mixin + MixinExtras annotations so shared mixins type-check in the purity gate.
+    // Each loader supplies the real thing at runtime - Fabric Loader and NeoForge both bundle Mixin
+    // and MixinExtras - so nothing here is shipped.
     compileOnly "org.spongepowered:mixin:0.8.5"
+    compileOnly "io.github.llamalad7:mixinextras-common:0.5.0"
 }
 
 neoForge {

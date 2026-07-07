@@ -8,8 +8,12 @@
     "BlockMixin",
     "ChestBlockEntityMixin",
     "ChestBlockMixin",
+    "CreeperMixin",
     "EnchantmentMixin",
-    "FarmlandBlockMixin"
+    "EndermanLeaveBlockGoalMixin",
+    "EndermanTakeBlockGoalMixin",
+    "FarmlandBlockMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -172,6 +172,33 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.rightClickHarvest.enabled.tooltip")),
                     cfg.rightClickHarvest.enabled,
                     val -> ModConfig.get().rightClickHarvest.enabled = val));
+
+            // ---- No Creeper Block Damage ----
+            addHeader("thatmakessense.config.section.noCreeperBlockDamage");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noCreeperBlockDamage.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noCreeperBlockDamage.enabled.tooltip")),
+                    cfg.noCreeperBlockDamage.enabled,
+                    val -> ModConfig.get().noCreeperBlockDamage.enabled = val));
+
+            // ---- No Enderman Griefing ----
+            addHeader("thatmakessense.config.section.noEndermanGriefing");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noEndermanGriefing.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noEndermanGriefing.enabled.tooltip")),
+                    cfg.noEndermanGriefing.enabled,
+                    val -> ModConfig.get().noEndermanGriefing.enabled = val));
+
+            // ---- Totem from Inventory ----
+            addHeader("thatmakessense.config.section.totemFromInventory");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.totemFromInventory.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.totemFromInventory.enabled.tooltip")),
+                    cfg.totemFromInventory.enabled,
+                    val -> ModConfig.get().totemFromInventory.enabled = val));
         }
 
         private void addHeader(String langKey) {

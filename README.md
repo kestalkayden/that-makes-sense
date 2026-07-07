@@ -17,6 +17,9 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Double Doors** | on | Opening one door of a matching pair opens both, like a real double door. Iron doors left to redstone. |
 | **No Berry Damage** | on | Sweet berry bushes no longer hurt you when you walk through them (mobs still take it). |
 | **Right-Click Harvest** | on | Right-clicking a fully-grown crop (wheat, carrots, potatoes, beetroot, nether wart) harvests and replants it in place. Sneak to place blocks instead. |
+| **No Creeper Block Damage** | on | Creeper explosions still hurt entities but leave terrain intact. |
+| **No Enderman Griefing** | on | Endermen no longer pick up or place blocks. |
+| **Totem from Inventory** | on | A Totem of Undying saves you from anywhere in the inventory, not just a hand. |
 
 More on the way, one at a time.
 
