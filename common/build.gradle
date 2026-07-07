@@ -13,6 +13,13 @@ base {
 // via `sourceSets ... srcDir` and compile them against each loader's own Minecraft view.
 sourceSets.main.java.srcDir "src/client/java"
 
+dependencies {
+    // Compile-only Mixin annotations so shared mixins (e.g. ChestBlockEntityMixin) type-check in the
+    // purity gate. Each loader supplies the real Mixin at runtime - Fabric Loader and NeoForge both
+    // bundle it - so nothing here is shipped.
+    compileOnly "org.spongepowered:mixin:0.8.5"
+}
+
 neoForge {
     neoFormVersion = "${neoform_version}"
     validateAccessTransformers = false

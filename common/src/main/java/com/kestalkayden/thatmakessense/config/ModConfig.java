@@ -38,6 +38,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public CopperChest copperChest = new CopperChest();
+
+    /** Copper Chest Rows: a single copper chest gains one extra row (4 rows / 36 slots). */
+    public static final class CopperChest {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -110,6 +117,9 @@ public final class ModConfig {
     private void fillMissing() {
         if (noCropTrample == null) {
             noCropTrample = new NoCropTrample();
+        }
+        if (copperChest == null) {
+            copperChest = new CopperChest();
         }
     }
 }

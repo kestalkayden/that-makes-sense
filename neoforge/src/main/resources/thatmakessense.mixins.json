@@ -4,8 +4,7 @@
   "compatibilityLevel": "JAVA_22",
   "minVersion": "0.8",
   "mixins": [
-    "ChestBlockEntityMixin",
-    "FarmlandBlockMixin"
+    "ChestBlockEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
