@@ -6,6 +6,7 @@
   "mixins": [
     "AbstractFurnaceBlockEntityMixin",
     "BlockMixin",
+    "BoneMealItemMixin",
     "ChestBlockEntityMixin",
     "ChestBlockMixin",
     "CraftingMenuMixin",
@@ -14,7 +15,10 @@
     "EndermanLeaveBlockGoalMixin",
     "EndermanTakeBlockGoalMixin",
     "ItemInstanceMixin",
+    "ItemStackMixin",
+    "LargeFireballMixin",
     "LivingEntityMixin",
+    "MerchantOfferMixin",
     "PhantomSpawnerMixin",
     "TamableAnimalMixin"
   ],

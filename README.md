@@ -28,6 +28,10 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Zombie Jerky** | on | Cooking rotten flesh in a **smoker** yields Zombie Jerky, a small always-edible snack (adds the item). |
 | **Stackable Totems** | on | Totems of Undying stack up to 64 instead of one at a time. Gated server-side. |
 | **Hide Armor** | on | An inventory button hides your own armor from view while it stays equipped. Client-side — only changes what you see. |
+| **No Ghast Fireball Damage** | on | Ghast fireball explosions still hurt entities but leave terrain intact. |
+| **Cobweb Shears** | on | Shears break cobweb instantly (and it still drops cobweb). |
+| **Villager Stock** | on | Villagers sell each trade ~4× as often before it locks (multiplier configurable). Gated server-side. |
+| **Bonemeal Extras** | on | Bonemeal grows nether wart, cactus, and sugar cane. |
 
 More on the way, one at a time.
 

@@ -79,5 +79,21 @@
   "thatmakessense.hideArmor.tooltip.hide": "Hide your armor",
   "thatmakessense.hideArmor.tooltip.show": "Show your armor",
 
+  "thatmakessense.config.section.noGhastFireballDamage": "No Ghast Fireball Damage",
+  "thatmakessense.config.noGhastFireballDamage.enabled": "Ghast Fireballs Don't Break Blocks",
+  "thatmakessense.config.noGhastFireballDamage.enabled.tooltip": "Ghast fireball explosions still hurt entities but no longer destroy terrain.",
+
+  "thatmakessense.config.section.cobwebShears": "Cobweb Shears",
+  "thatmakessense.config.cobwebShears.enabled": "Shears Break Cobweb Instantly",
+  "thatmakessense.config.cobwebShears.enabled.tooltip": "Cobweb breaks instantly when mined with shears (and still drops cobweb).",
+
+  "thatmakessense.config.section.villagerStock": "Villager Stock",
+  "thatmakessense.config.villagerStock.enabled": "More Trade Stock",
+  "thatmakessense.config.villagerStock.enabled.tooltip": "Villagers sell each trade several times as often before it locks (4x by default; still restock). Change the multiplier in the config file. Server-authoritative.",
+
+  "thatmakessense.config.section.bonemealExtras": "Bonemeal Extras",
+  "thatmakessense.config.bonemealExtras.enabled": "Bonemeal Nether Wart, Cactus & Sugar Cane",
+  "thatmakessense.config.bonemealExtras.enabled.tooltip": "Bonemeal grows nether wart, and adds a segment to cactus and sugar cane (up to their natural height).",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

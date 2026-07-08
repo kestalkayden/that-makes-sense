@@ -165,6 +165,38 @@ public final class ModConfig {
         public boolean hidden = false;
     }
 
+    public NoGhastFireballDamage noGhastFireballDamage = new NoGhastFireballDamage();
+
+    /** Ghast fireball explosions stop breaking terrain (they still hurt entities). */
+    public static final class NoGhastFireballDamage {
+        public boolean enabled = true;
+    }
+
+    public CobwebShears cobwebShears = new CobwebShears();
+
+    /** Shears break cobweb instantly. */
+    public static final class CobwebShears {
+        public boolean enabled = true;
+    }
+
+    public VillagerStock villagerStock = new VillagerStock();
+
+    /**
+     * Villagers sell each trade {@code multiplier} times as often before it locks (they still restock).
+     * {@code multiplier} is edit-in-file (defaults to 4x); the screen exposes only the on/off toggle.
+     */
+    public static final class VillagerStock {
+        public boolean enabled = true;
+        public int multiplier = 4;
+    }
+
+    public BonemealExtras bonemealExtras = new BonemealExtras();
+
+    /** Bonemeal grows nether wart, cactus, and sugar cane. */
+    public static final class BonemealExtras {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -288,6 +320,18 @@ public final class ModConfig {
         }
         if (hideArmor == null) {
             hideArmor = new HideArmor();
+        }
+        if (noGhastFireballDamage == null) {
+            noGhastFireballDamage = new NoGhastFireballDamage();
+        }
+        if (cobwebShears == null) {
+            cobwebShears = new CobwebShears();
+        }
+        if (villagerStock == null) {
+            villagerStock = new VillagerStock();
+        }
+        if (bonemealExtras == null) {
+            bonemealExtras = new BonemealExtras();
         }
     }
 }

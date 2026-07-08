@@ -271,6 +271,42 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.hideArmor.enabled.tooltip")),
                     cfg.hideArmor.enabled,
                     val -> ModConfig.get().hideArmor.enabled = val));
+
+            // ---- No Ghast Fireball Damage ----
+            addHeader("thatmakessense.config.section.noGhastFireballDamage");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noGhastFireballDamage.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noGhastFireballDamage.enabled.tooltip")),
+                    cfg.noGhastFireballDamage.enabled,
+                    val -> ModConfig.get().noGhastFireballDamage.enabled = val));
+
+            // ---- Cobweb Shears ----
+            addHeader("thatmakessense.config.section.cobwebShears");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.cobwebShears.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.cobwebShears.enabled.tooltip")),
+                    cfg.cobwebShears.enabled,
+                    val -> ModConfig.get().cobwebShears.enabled = val));
+
+            // ---- Villager Stock ----
+            addHeader("thatmakessense.config.section.villagerStock");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.villagerStock.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.villagerStock.enabled.tooltip")),
+                    cfg.villagerStock.enabled,
+                    val -> ModConfig.get().villagerStock.enabled = val));
+
+            // ---- Bonemeal Extras ----
+            addHeader("thatmakessense.config.section.bonemealExtras");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.bonemealExtras.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.bonemealExtras.enabled.tooltip")),
+                    cfg.bonemealExtras.enabled,
+                    val -> ModConfig.get().bonemealExtras.enabled = val));
         }
 
         private void addHeader(String langKey) {
