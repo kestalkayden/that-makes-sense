@@ -227,15 +227,6 @@ public class ConfigScreen extends Screen {
                     cfg.noEnderPearlDamage.enabled,
                     val -> ModConfig.get().noEnderPearlDamage.enabled = val));
 
-            // ---- Craftable Name Tag ----
-            addHeader("thatmakessense.config.section.craftableNameTag");
-            addOption(OptionInstance.createBoolean(
-                    "thatmakessense.config.craftableNameTag.enabled",
-                    OptionInstance.cachedConstantTooltip(
-                            Component.translatable("thatmakessense.config.craftableNameTag.enabled.tooltip")),
-                    cfg.craftableNameTag.enabled,
-                    val -> ModConfig.get().craftableNameTag.enabled = val));
-
             // ---- Rotten Flesh -> Leather ----
             addHeader("thatmakessense.config.section.rottenFleshLeather");
             addOption(OptionInstance.createBoolean(

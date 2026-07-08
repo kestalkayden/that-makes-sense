@@ -125,13 +125,6 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
-    public CraftableNameTag craftableNameTag = new CraftableNameTag();
-
-    /** A name tag can be crafted (3 string + 2 paper + 2 iron ingot). */
-    public static final class CraftableNameTag {
-        public boolean enabled = true;
-    }
-
     public RottenFleshLeather rottenFleshLeather = new RottenFleshLeather();
 
     /** Smelting rotten flesh in a furnace yields leather. */
@@ -305,9 +298,6 @@ public final class ModConfig {
         }
         if (noEnderPearlDamage == null) {
             noEnderPearlDamage = new NoEnderPearlDamage();
-        }
-        if (craftableNameTag == null) {
-            craftableNameTag = new CraftableNameTag();
         }
         if (rottenFleshLeather == null) {
             rottenFleshLeather = new RottenFleshLeather();
