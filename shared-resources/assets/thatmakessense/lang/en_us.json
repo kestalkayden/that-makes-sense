@@ -115,5 +115,9 @@
   "thatmakessense.config.noPetFallDamage.enabled": "Tamed Pets Take No Fall Damage",
   "thatmakessense.config.noPetFallDamage.enabled.tooltip": "Tamed wolves, cats, and parrots take no fall damage (they path badly off ledges). Other damage still applies.",
 
+  "thatmakessense.config.section.noVillagerWitch": "No Villager Witch Conversion",
+  "thatmakessense.config.noVillagerWitch.enabled": "Lightning Doesn't Turn Villagers into Witches",
+  "thatmakessense.config.noVillagerWitch.enabled.tooltip": "Villagers struck by lightning shrug it off instead of converting into a witch, so a storm can't wipe out your trading hall.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

@@ -23,7 +23,8 @@
     "ParrotMixin",
     "PhantomSpawnerMixin",
     "ProjectileWeaponItemMixin",
-    "TamableAnimalMixin"
+    "TamableAnimalMixin",
+    "VillagerMixin"
   ],
   "client": [
     "HumanoidArmorLayerMixin",

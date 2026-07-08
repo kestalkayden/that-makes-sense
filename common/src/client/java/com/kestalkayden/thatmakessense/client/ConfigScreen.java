@@ -352,6 +352,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.noPetFallDamage.enabled.tooltip")),
                     cfg.noPetFallDamage.enabled,
                     val -> ModConfig.get().noPetFallDamage.enabled = val));
+
+            // ---- No Villager Witch Conversion ----
+            addHeader("thatmakessense.config.section.noVillagerWitch");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noVillagerWitch.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noVillagerWitch.enabled.tooltip")),
+                    cfg.noVillagerWitch.enabled,
+                    val -> ModConfig.get().noVillagerWitch.enabled = val));
         }
 
         private void addHeader(String langKey) {

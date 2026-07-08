@@ -233,6 +233,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public NoVillagerWitch noVillagerWitch = new NoVillagerWitch();
+
+    /** Villagers struck by lightning don't convert into witches. */
+    public static final class NoVillagerWitch {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -383,6 +390,9 @@ public final class ModConfig {
         }
         if (noPetFallDamage == null) {
             noPetFallDamage = new NoPetFallDamage();
+        }
+        if (noVillagerWitch == null) {
+            noVillagerWitch = new NoVillagerWitch();
         }
     }
 }

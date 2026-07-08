@@ -37,6 +37,7 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Heal Parrots** | on | Feed seeds to an injured tamed parrot to heal it (like wolves/cats). |
 | **Pet Damage Immunity** | on | Tamed pets take no damage from you or your other pets (mobs/environment still do). |
 | **No Pet Fall Damage** | on | Tamed wolves, cats, and parrots take no fall damage. |
+| **No Villager Witch Conversion** | on | Villagers struck by lightning don't turn into witches. |
 
 More on the way, one at a time.
 
