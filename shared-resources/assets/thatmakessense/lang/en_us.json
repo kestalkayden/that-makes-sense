@@ -107,5 +107,9 @@
   "thatmakessense.config.healParrots.enabled": "Feed Seeds to Heal Tamed Parrots",
   "thatmakessense.config.healParrots.enabled.tooltip": "Feeding seeds to an injured tamed parrot heals it, like feeding wolves or cats (parrots otherwise have no way to heal).",
 
+  "thatmakessense.config.section.petProtection": "Pet Damage Immunity",
+  "thatmakessense.config.petProtection.enabled": "Pets Immune to You & Your Pets",
+  "thatmakessense.config.petProtection.enabled.tooltip": "Your tamed pets take no damage from you or your other tamed pets, so sweeping attacks, stray arrows, and infighting can't hurt them. Other players, mobs, and the environment still do.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

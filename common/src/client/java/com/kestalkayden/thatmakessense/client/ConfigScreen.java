@@ -334,6 +334,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.healParrots.enabled.tooltip")),
                     cfg.healParrots.enabled,
                     val -> ModConfig.get().healParrots.enabled = val));
+
+            // ---- Pet Damage Immunity ----
+            addHeader("thatmakessense.config.section.petProtection");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.petProtection.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.petProtection.enabled.tooltip")),
+                    cfg.petProtection.enabled,
+                    val -> ModConfig.get().petProtection.enabled = val));
         }
 
         private void addHeader(String langKey) {

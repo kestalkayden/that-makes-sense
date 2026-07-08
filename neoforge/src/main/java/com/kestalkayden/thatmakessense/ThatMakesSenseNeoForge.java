@@ -9,6 +9,7 @@ import com.kestalkayden.thatmakessense.feature.CopperChestMenus;
 import com.kestalkayden.thatmakessense.feature.DoubleDoors;
 import com.kestalkayden.thatmakessense.feature.NoBerryDamage;
 import com.kestalkayden.thatmakessense.feature.NoEnderPearlDamage;
+import com.kestalkayden.thatmakessense.feature.PetProtection;
 import com.kestalkayden.thatmakessense.feature.RightClickHarvest;
 import com.kestalkayden.thatmakessense.feature.TmsItems;
 
@@ -103,7 +104,8 @@ public class ThatMakesSenseNeoForge {
 
     private static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {
         if (NoBerryDamage.shouldCancel(event.getSource(), event.getEntity())
-                || NoEnderPearlDamage.shouldCancel(event.getSource())) {
+                || NoEnderPearlDamage.shouldCancel(event.getSource())
+                || PetProtection.shouldCancel(event.getSource(), event.getEntity())) {
             event.setCanceled(true);
         }
     }

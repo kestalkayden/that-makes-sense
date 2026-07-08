@@ -219,6 +219,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public PetProtection petProtection = new PetProtection();
+
+    /** Tamed pets take no damage from their owner or the owner's other tamed pets. */
+    public static final class PetProtection {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -363,6 +370,9 @@ public final class ModConfig {
         }
         if (healParrots == null) {
             healParrots = new HealParrots();
+        }
+        if (petProtection == null) {
+            petProtection = new PetProtection();
         }
     }
 }
