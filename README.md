@@ -32,6 +32,7 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Villager Stock** | on | Villagers sell each trade ~4× as often before it locks (multiplier configurable). Gated server-side. |
 | **Bonemeal Extras** | on | Bonemeal grows nether wart, cactus, and sugar cane. |
 | **Stable Villager Prices** | on | Trade prices stop climbing from heavy-use demand (discounts still apply). Gated server-side. |
+| **Longer Leads** | on | Leads snap at ~24 blocks instead of 12 (distance configurable). |
 
 More on the way, one at a time.
 

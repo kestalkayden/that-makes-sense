@@ -197,6 +197,14 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public LongerLeads longerLeads = new LongerLeads();
+
+    /** Leads break at {@code distance} blocks instead of vanilla's 12 (elastic pull still starts at 6). */
+    public static final class LongerLeads {
+        public boolean enabled = true;
+        public double distance = 24.0;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -332,6 +340,9 @@ public final class ModConfig {
         }
         if (stableVillagerPrices == null) {
             stableVillagerPrices = new StableVillagerPrices();
+        }
+        if (longerLeads == null) {
+            longerLeads = new LongerLeads();
         }
     }
 }

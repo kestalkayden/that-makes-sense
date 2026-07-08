@@ -307,6 +307,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.stableVillagerPrices.enabled.tooltip")),
                     cfg.stableVillagerPrices.enabled,
                     val -> ModConfig.get().stableVillagerPrices.enabled = val));
+
+            // ---- Longer Leads ----
+            addHeader("thatmakessense.config.section.longerLeads");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.longerLeads.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.longerLeads.enabled.tooltip")),
+                    cfg.longerLeads.enabled,
+                    val -> ModConfig.get().longerLeads.enabled = val));
         }
 
         private void addHeader(String langKey) {

@@ -17,6 +17,7 @@
     "ItemInstanceMixin",
     "ItemStackMixin",
     "LargeFireballMixin",
+    "LeashableMixin",
     "LivingEntityMixin",
     "MerchantOfferMixin",
     "PhantomSpawnerMixin",

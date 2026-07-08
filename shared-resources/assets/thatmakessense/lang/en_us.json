@@ -95,5 +95,9 @@
   "thatmakessense.config.stableVillagerPrices.enabled": "Prices Don't Inflate from Demand",
   "thatmakessense.config.stableVillagerPrices.enabled.tooltip": "Villager trade prices stop climbing when a trade is used heavily. Discounts (Hero of the Village, curing a zombie villager) still apply.",
 
+  "thatmakessense.config.section.longerLeads": "Longer Leads",
+  "thatmakessense.config.longerLeads.enabled": "Leads Reach Further Before Snapping",
+  "thatmakessense.config.longerLeads.enabled.tooltip": "Leashed mobs can wander about 24 blocks before the lead breaks (vanilla is 12). Change the distance in the config file.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }
