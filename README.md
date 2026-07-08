@@ -26,6 +26,8 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Craftable Name Tag** | on | Craft a name tag from 3 string + 2 paper + 2 iron ingots. |
 | **Rotten Flesh → Leather** | on | Smelting rotten flesh in a **furnace** yields leather. |
 | **Zombie Jerky** | on | Cooking rotten flesh in a **smoker** yields Zombie Jerky, a small always-edible snack (adds the item). |
+| **Stackable Totems** | on | Totems of Undying stack up to 64 instead of one at a time. Gated server-side. |
+| **Hide Armor** | on | An inventory button hides your own armor from view while it stays equipped. Client-side — only changes what you see. |
 
 More on the way, one at a time.
 

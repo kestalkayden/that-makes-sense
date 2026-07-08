@@ -253,6 +253,24 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.zombieJerky.enabled.tooltip")),
                     cfg.zombieJerky.enabled,
                     val -> ModConfig.get().zombieJerky.enabled = val));
+
+            // ---- Stackable Totems ----
+            addHeader("thatmakessense.config.section.stackableTotems");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.stackableTotems.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.stackableTotems.enabled.tooltip")),
+                    cfg.stackableTotems.enabled,
+                    val -> ModConfig.get().stackableTotems.enabled = val));
+
+            // ---- Hide Armor ----
+            addHeader("thatmakessense.config.section.hideArmor");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.hideArmor.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.hideArmor.enabled.tooltip")),
+                    cfg.hideArmor.enabled,
+                    val -> ModConfig.get().hideArmor.enabled = val));
         }
 
         private void addHeader(String langKey) {

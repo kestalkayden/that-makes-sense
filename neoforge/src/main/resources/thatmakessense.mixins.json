@@ -13,9 +13,14 @@
     "EnchantmentMixin",
     "EndermanLeaveBlockGoalMixin",
     "EndermanTakeBlockGoalMixin",
+    "ItemInstanceMixin",
     "LivingEntityMixin",
     "PhantomSpawnerMixin",
     "TamableAnimalMixin"
+  ],
+  "client": [
+    "HumanoidArmorLayerMixin",
+    "InventoryScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

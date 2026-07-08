@@ -146,6 +146,25 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public StackableTotems stackableTotems = new StackableTotems();
+
+    /** Totems of Undying stack (up to a full stack) instead of being capped at one. */
+    public static final class StackableTotems {
+        public boolean enabled = true;
+    }
+
+    public HideArmor hideArmor = new HideArmor();
+
+    /**
+     * Hide your own armor from view while it stays fully equipped. Client-side cosmetic only.
+     * {@code enabled} gates the inventory button; {@code hidden} is the live toggle the button flips
+     * and is persisted so the preference survives relaunches.
+     */
+    public static final class HideArmor {
+        public boolean enabled = true;
+        public boolean hidden = false;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -263,6 +282,12 @@ public final class ModConfig {
         }
         if (zombieJerky == null) {
             zombieJerky = new ZombieJerky();
+        }
+        if (stackableTotems == null) {
+            stackableTotems = new StackableTotems();
+        }
+        if (hideArmor == null) {
+            hideArmor = new HideArmor();
         }
     }
 }

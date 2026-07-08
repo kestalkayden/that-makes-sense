@@ -67,5 +67,17 @@
   "thatmakessense.config.zombieJerky.enabled": "Smoke Rotten Flesh into Zombie Jerky",
   "thatmakessense.config.zombieJerky.enabled.tooltip": "Cooking rotten flesh in a smoker yields Zombie Jerky, a small always-edible snack.",
 
+  "thatmakessense.config.section.stackableTotems": "Stackable Totems",
+  "thatmakessense.config.stackableTotems.enabled": "Totems Stack",
+  "thatmakessense.config.stackableTotems.enabled.tooltip": "Totems of Undying stack up to 64 instead of one at a time. Resolved server-side, so a server's setting wins.",
+
+  "thatmakessense.config.section.hideArmor": "Hide Armor",
+  "thatmakessense.config.hideArmor.enabled": "Show Hide-Armor Button",
+  "thatmakessense.config.hideArmor.enabled.tooltip": "Adds a button to your inventory that hides your own armor from view while keeping it equipped. Only changes what you see, not what others see.",
+
+  "thatmakessense.hideArmor.button": "Hide Armor",
+  "thatmakessense.hideArmor.tooltip.hide": "Hide your armor",
+  "thatmakessense.hideArmor.tooltip.show": "Show your armor",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }
