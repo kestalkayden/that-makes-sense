@@ -39,6 +39,7 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **No Pet Fall Damage** | on | Tamed wolves, cats, and parrots take no fall damage. |
 | **No Villager Witch Conversion** | on | Villagers struck by lightning don't turn into witches. |
 | **Chests Open Under Blocks** | on | Chests open with a solid block directly above (cats still block them). |
+| **Faster Nether Portal** | on | Near-instant portal travel instead of the ~4s wait (delay configurable). |
 
 More on the way, one at a time.
 

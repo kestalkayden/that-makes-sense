@@ -21,6 +21,7 @@
     "LeashableMixin",
     "LivingEntityMixin",
     "MerchantOfferMixin",
+    "NetherPortalBlockMixin",
     "ParrotMixin",
     "PhantomSpawnerMixin",
     "ProjectileWeaponItemMixin",

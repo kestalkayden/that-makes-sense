@@ -123,5 +123,9 @@
   "thatmakessense.config.chestsUnderBlocks.enabled": "Open Chests With a Block Above",
   "thatmakessense.config.chestsUnderBlocks.enabled.tooltip": "Chests open even with a solid block directly on top (no need to leave a gap). A cat sitting on the chest still blocks it, as in vanilla.",
 
+  "thatmakessense.config.section.fasterNetherPortal": "Faster Nether Portal",
+  "thatmakessense.config.fasterNetherPortal.enabled": "Near-Instant Portal Travel",
+  "thatmakessense.config.fasterNetherPortal.enabled.tooltip": "Cuts the wait before a nether portal sends you through (vanilla is ~4 seconds). Instant by default; set the delay in ticks in the config file.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

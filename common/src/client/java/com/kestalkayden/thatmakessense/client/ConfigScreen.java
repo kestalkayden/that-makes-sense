@@ -370,6 +370,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.chestsUnderBlocks.enabled.tooltip")),
                     cfg.chestsUnderBlocks.enabled,
                     val -> ModConfig.get().chestsUnderBlocks.enabled = val));
+
+            // ---- Faster Nether Portal ----
+            addHeader("thatmakessense.config.section.fasterNetherPortal");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.fasterNetherPortal.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.fasterNetherPortal.enabled.tooltip")),
+                    cfg.fasterNetherPortal.enabled,
+                    val -> ModConfig.get().fasterNetherPortal.enabled = val));
         }
 
         private void addHeader(String langKey) {

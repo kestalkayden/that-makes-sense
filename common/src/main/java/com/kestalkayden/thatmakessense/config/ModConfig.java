@@ -247,6 +247,14 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public FasterNetherPortal fasterNetherPortal = new FasterNetherPortal();
+
+    /** Time (ticks) a player waits in a nether portal before travelling, capped down from vanilla ~80. */
+    public static final class FasterNetherPortal {
+        public boolean enabled = true;
+        public int delayTicks = 0;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -403,6 +411,9 @@ public final class ModConfig {
         }
         if (chestsUnderBlocks == null) {
             chestsUnderBlocks = new ChestsUnderBlocks();
+        }
+        if (fasterNetherPortal == null) {
+            fasterNetherPortal = new FasterNetherPortal();
         }
     }
 }
