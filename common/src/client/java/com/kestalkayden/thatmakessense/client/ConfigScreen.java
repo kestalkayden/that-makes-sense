@@ -325,6 +325,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.infinityAllArrows.enabled.tooltip")),
                     cfg.infinityAllArrows.enabled,
                     val -> ModConfig.get().infinityAllArrows.enabled = val));
+
+            // ---- Heal Parrots with Seeds ----
+            addHeader("thatmakessense.config.section.healParrots");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.healParrots.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.healParrots.enabled.tooltip")),
+                    cfg.healParrots.enabled,
+                    val -> ModConfig.get().healParrots.enabled = val));
         }
 
         private void addHeader(String langKey) {

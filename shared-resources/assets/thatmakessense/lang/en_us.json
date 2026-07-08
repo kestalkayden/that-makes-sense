@@ -103,5 +103,9 @@
   "thatmakessense.config.infinityAllArrows.enabled": "Infinity Works on Tipped & Spectral Arrows",
   "thatmakessense.config.infinityAllArrows.enabled.tooltip": "An Infinity bow shoots any arrow for free, not just plain arrows. Fired arrows can't be picked up, so there's no duplication.",
 
+  "thatmakessense.config.section.healParrots": "Heal Parrots",
+  "thatmakessense.config.healParrots.enabled": "Feed Seeds to Heal Tamed Parrots",
+  "thatmakessense.config.healParrots.enabled.tooltip": "Feeding seeds to an injured tamed parrot heals it, like feeding wolves or cats (parrots otherwise have no way to heal).",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

@@ -212,6 +212,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public HealParrots healParrots = new HealParrots();
+
+    /** An injured tamed parrot heals when fed seeds (parrots otherwise have no heal path). */
+    public static final class HealParrots {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -353,6 +360,9 @@ public final class ModConfig {
         }
         if (infinityAllArrows == null) {
             infinityAllArrows = new InfinityAllArrows();
+        }
+        if (healParrots == null) {
+            healParrots = new HealParrots();
         }
     }
 }

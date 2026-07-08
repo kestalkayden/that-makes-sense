@@ -20,6 +20,7 @@
     "LeashableMixin",
     "LivingEntityMixin",
     "MerchantOfferMixin",
+    "ParrotMixin",
     "PhantomSpawnerMixin",
     "ProjectileWeaponItemMixin",
     "TamableAnimalMixin"
