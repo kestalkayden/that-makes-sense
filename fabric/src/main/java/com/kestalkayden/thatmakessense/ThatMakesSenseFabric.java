@@ -8,6 +8,7 @@ import com.kestalkayden.thatmakessense.feature.CopperChestMenus;
 import com.kestalkayden.thatmakessense.feature.DoubleDoors;
 import com.kestalkayden.thatmakessense.feature.NoBerryDamage;
 import com.kestalkayden.thatmakessense.feature.NoEnderPearlDamage;
+import com.kestalkayden.thatmakessense.feature.NoPetFallDamage;
 import com.kestalkayden.thatmakessense.feature.PetProtection;
 import com.kestalkayden.thatmakessense.feature.RightClickHarvest;
 import com.kestalkayden.thatmakessense.feature.TmsItems;
@@ -74,6 +75,6 @@ public class ThatMakesSenseFabric implements ModInitializer {
         // No Berry Damage + No Ender Pearl Damage: returning false disallows the incoming damage.
         ServerLivingEntityEvents.ALLOW_DAMAGE.register((entity, source, amount) ->
             !(NoBerryDamage.shouldCancel(source, entity) || NoEnderPearlDamage.shouldCancel(source)
-              || PetProtection.shouldCancel(source, entity)));
+              || PetProtection.shouldCancel(source, entity) || NoPetFallDamage.shouldCancel(source, entity)));
     }
 }

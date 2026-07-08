@@ -36,6 +36,7 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Infinity on All Arrows** | on | An Infinity bow shoots tipped & spectral arrows free too (no pickup, so no dupe). |
 | **Heal Parrots** | on | Feed seeds to an injured tamed parrot to heal it (like wolves/cats). |
 | **Pet Damage Immunity** | on | Tamed pets take no damage from you or your other pets (mobs/environment still do). |
+| **No Pet Fall Damage** | on | Tamed wolves, cats, and parrots take no fall damage. |
 
 More on the way, one at a time.
 

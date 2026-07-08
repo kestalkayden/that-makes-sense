@@ -111,5 +111,9 @@
   "thatmakessense.config.petProtection.enabled": "Pets Immune to You & Your Pets",
   "thatmakessense.config.petProtection.enabled.tooltip": "Your tamed pets take no damage from you or your other tamed pets, so sweeping attacks, stray arrows, and infighting can't hurt them. Other players, mobs, and the environment still do.",
 
+  "thatmakessense.config.section.noPetFallDamage": "No Pet Fall Damage",
+  "thatmakessense.config.noPetFallDamage.enabled": "Tamed Pets Take No Fall Damage",
+  "thatmakessense.config.noPetFallDamage.enabled.tooltip": "Tamed wolves, cats, and parrots take no fall damage (they path badly off ledges). Other damage still applies.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

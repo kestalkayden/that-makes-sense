@@ -226,6 +226,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public NoPetFallDamage noPetFallDamage = new NoPetFallDamage();
+
+    /** Tamed pets (wolves, cats, parrots) take no fall damage. */
+    public static final class NoPetFallDamage {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -373,6 +380,9 @@ public final class ModConfig {
         }
         if (petProtection == null) {
             petProtection = new PetProtection();
+        }
+        if (noPetFallDamage == null) {
+            noPetFallDamage = new NoPetFallDamage();
         }
     }
 }

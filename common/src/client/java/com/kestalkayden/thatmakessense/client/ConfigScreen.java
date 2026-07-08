@@ -343,6 +343,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.petProtection.enabled.tooltip")),
                     cfg.petProtection.enabled,
                     val -> ModConfig.get().petProtection.enabled = val));
+
+            // ---- No Pet Fall Damage ----
+            addHeader("thatmakessense.config.section.noPetFallDamage");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noPetFallDamage.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noPetFallDamage.enabled.tooltip")),
+                    cfg.noPetFallDamage.enabled,
+                    val -> ModConfig.get().noPetFallDamage.enabled = val));
         }
 
         private void addHeader(String langKey) {
