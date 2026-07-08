@@ -119,5 +119,9 @@
   "thatmakessense.config.noVillagerWitch.enabled": "Lightning Doesn't Turn Villagers into Witches",
   "thatmakessense.config.noVillagerWitch.enabled.tooltip": "Villagers struck by lightning shrug it off instead of converting into a witch, so a storm can't wipe out your trading hall.",
 
+  "thatmakessense.config.section.chestsUnderBlocks": "Chests Open Under Blocks",
+  "thatmakessense.config.chestsUnderBlocks.enabled": "Open Chests With a Block Above",
+  "thatmakessense.config.chestsUnderBlocks.enabled.tooltip": "Chests open even with a solid block directly on top (no need to leave a gap). A cat sitting on the chest still blocks it, as in vanilla.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

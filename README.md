@@ -38,6 +38,7 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Pet Damage Immunity** | on | Tamed pets take no damage from you or your other pets (mobs/environment still do). |
 | **No Pet Fall Damage** | on | Tamed wolves, cats, and parrots take no fall damage. |
 | **No Villager Witch Conversion** | on | Villagers struck by lightning don't turn into witches. |
+| **Chests Open Under Blocks** | on | Chests open with a solid block directly above (cats still block them). |
 
 More on the way, one at a time.
 

@@ -361,6 +361,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.noVillagerWitch.enabled.tooltip")),
                     cfg.noVillagerWitch.enabled,
                     val -> ModConfig.get().noVillagerWitch.enabled = val));
+
+            // ---- Chests Open Under Blocks ----
+            addHeader("thatmakessense.config.section.chestsUnderBlocks");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.chestsUnderBlocks.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.chestsUnderBlocks.enabled.tooltip")),
+                    cfg.chestsUnderBlocks.enabled,
+                    val -> ModConfig.get().chestsUnderBlocks.enabled = val));
         }
 
         private void addHeader(String langKey) {

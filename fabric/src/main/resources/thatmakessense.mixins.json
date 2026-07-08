@@ -9,6 +9,7 @@
     "BoneMealItemMixin",
     "ChestBlockEntityMixin",
     "ChestBlockMixin",
+    "ChestBlockOpenMixin",
     "CreeperMixin",
     "EnchantmentMixin",
     "EndermanLeaveBlockGoalMixin",

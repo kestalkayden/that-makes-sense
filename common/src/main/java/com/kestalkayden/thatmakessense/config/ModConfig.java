@@ -240,6 +240,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public ChestsUnderBlocks chestsUnderBlocks = new ChestsUnderBlocks();
+
+    /** Chests open even with a solid block directly above them (the cat-on-chest block still applies). */
+    public static final class ChestsUnderBlocks {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -393,6 +400,9 @@ public final class ModConfig {
         }
         if (noVillagerWitch == null) {
             noVillagerWitch = new NoVillagerWitch();
+        }
+        if (chestsUnderBlocks == null) {
+            chestsUnderBlocks = new ChestsUnderBlocks();
         }
     }
 }
