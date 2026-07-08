@@ -136,7 +136,6 @@ jobs:
         if: needs.plan.outputs.fabric == 'true'
         uses: Kira-NT/mc-publish@v3.3
         with:
-          # TODO: confirm the Modrinth project slug/id once the listing is created.
           modrinth-id: that-makes-sense
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           changelog-file: ${{ needs.plan.outputs.changelog }}
@@ -153,13 +152,12 @@ jobs:
           curl -fsS -X PATCH "https://api.modrinth.com/v2/version/${{ steps.mr-fabric.outputs.modrinth-version }}" \
             -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}" \
             -H "Content-Type: application/json" \
-            -d '{"client_side":"optional","server_side":"required"}'
+            -d '{"client_side":"required","server_side":"required"}'
       - name: modrinth neoforge
         id: mr-neoforge
         if: needs.plan.outputs.neoforge == 'true'
         uses: Kira-NT/mc-publish@v3.3
         with:
-          # TODO: confirm the Modrinth project slug/id once the listing is created.
           modrinth-id: that-makes-sense
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           changelog-file: ${{ needs.plan.outputs.changelog }}
@@ -176,7 +174,7 @@ jobs:
           curl -fsS -X PATCH "https://api.modrinth.com/v2/version/${{ steps.mr-neoforge.outputs.modrinth-version }}" \
             -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}" \
             -H "Content-Type: application/json" \
-            -d '{"client_side":"optional","server_side":"required"}'
+            -d '{"client_side":"required","server_side":"required"}'
 
   publish-curseforge:
     needs: [plan, build-fabric, build-neoforge]
@@ -198,8 +196,7 @@ jobs:
         if: needs.plan.outputs.fabric == 'true'
         uses: Kira-NT/mc-publish@v3.3
         with:
-          # TODO: replace with the CurseForge numeric project ID once the listing is created.
-          curseforge-id: '000000'
+          curseforge-id: 1603038
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           changelog-file: ${{ needs.plan.outputs.changelog }}
           files: fabric/build/libs/!(*-@(sources|javadoc)).jar
@@ -213,8 +210,7 @@ jobs:
         if: needs.plan.outputs.neoforge == 'true'
         uses: Kira-NT/mc-publish@v3.3
         with:
-          # TODO: replace with the CurseForge numeric project ID once the listing is created.
-          curseforge-id: '000000'
+          curseforge-id: 1603038
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           changelog-file: ${{ needs.plan.outputs.changelog }}
           files: neoforge/build/libs/!(*-@(sources|javadoc)).jar
