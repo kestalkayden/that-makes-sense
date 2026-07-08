@@ -33,6 +33,7 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **Bonemeal Extras** | on | Bonemeal grows nether wart, cactus, and sugar cane. |
 | **Stable Villager Prices** | on | Trade prices stop climbing from heavy-use demand (discounts still apply). Gated server-side. |
 | **Longer Leads** | on | Leads snap at ~24 blocks instead of 12 (distance configurable). |
+| **Infinity on All Arrows** | on | An Infinity bow shoots tipped & spectral arrows free too (no pickup, so no dupe). |
 
 More on the way, one at a time.
 

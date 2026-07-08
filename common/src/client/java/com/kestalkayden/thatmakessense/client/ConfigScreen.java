@@ -316,6 +316,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.longerLeads.enabled.tooltip")),
                     cfg.longerLeads.enabled,
                     val -> ModConfig.get().longerLeads.enabled = val));
+
+            // ---- Infinity on All Arrows ----
+            addHeader("thatmakessense.config.section.infinityAllArrows");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.infinityAllArrows.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.infinityAllArrows.enabled.tooltip")),
+                    cfg.infinityAllArrows.enabled,
+                    val -> ModConfig.get().infinityAllArrows.enabled = val));
         }
 
         private void addHeader(String langKey) {

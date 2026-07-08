@@ -99,5 +99,9 @@
   "thatmakessense.config.longerLeads.enabled": "Leads Reach Further Before Snapping",
   "thatmakessense.config.longerLeads.enabled.tooltip": "Leashed mobs can wander about 24 blocks before the lead breaks (vanilla is 12). Change the distance in the config file.",
 
+  "thatmakessense.config.section.infinityAllArrows": "Infinity on All Arrows",
+  "thatmakessense.config.infinityAllArrows.enabled": "Infinity Works on Tipped & Spectral Arrows",
+  "thatmakessense.config.infinityAllArrows.enabled.tooltip": "An Infinity bow shoots any arrow for free, not just plain arrows. Fired arrows can't be picked up, so there's no duplication.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

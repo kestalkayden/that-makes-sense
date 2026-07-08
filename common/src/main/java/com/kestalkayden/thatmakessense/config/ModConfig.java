@@ -205,6 +205,13 @@ public final class ModConfig {
         public double distance = 24.0;
     }
 
+    public InfinityAllArrows infinityAllArrows = new InfinityAllArrows();
+
+    /** Infinity works on every arrow type (tipped, spectral), not just the plain arrow. */
+    public static final class InfinityAllArrows {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -343,6 +350,9 @@ public final class ModConfig {
         }
         if (longerLeads == null) {
             longerLeads = new LongerLeads();
+        }
+        if (infinityAllArrows == null) {
+            infinityAllArrows = new InfinityAllArrows();
         }
     }
 }

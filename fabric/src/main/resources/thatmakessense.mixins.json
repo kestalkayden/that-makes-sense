@@ -21,6 +21,7 @@
     "LivingEntityMixin",
     "MerchantOfferMixin",
     "PhantomSpawnerMixin",
+    "ProjectileWeaponItemMixin",
     "TamableAnimalMixin"
   ],
   "client": [
