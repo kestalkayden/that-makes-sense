@@ -132,6 +132,20 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public RottenFleshLeather rottenFleshLeather = new RottenFleshLeather();
+
+    /** Smelting rotten flesh in a furnace yields leather. */
+    public static final class RottenFleshLeather {
+        public boolean enabled = true;
+    }
+
+    public ZombieJerky zombieJerky = new ZombieJerky();
+
+    /** Smoking rotten flesh yields Zombie Jerky (a small food item). */
+    public static final class ZombieJerky {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -243,6 +257,12 @@ public final class ModConfig {
         }
         if (craftableNameTag == null) {
             craftableNameTag = new CraftableNameTag();
+        }
+        if (rottenFleshLeather == null) {
+            rottenFleshLeather = new RottenFleshLeather();
+        }
+        if (zombieJerky == null) {
+            zombieJerky = new ZombieJerky();
         }
     }
 }

@@ -24,6 +24,8 @@ Targets Minecraft 26.2 on Fabric and NeoForge.
 | **No Pet Teleport Damage** | on | Tamed pets take no fall damage teleporting to you. |
 | **No Ender Pearl Damage** | on | Throwing an ender pearl no longer deals teleport damage. |
 | **Craftable Name Tag** | on | Craft a name tag from 3 string + 2 paper + 2 iron ingots. |
+| **Rotten Flesh → Leather** | on | Smelting rotten flesh in a **furnace** yields leather. |
+| **Zombie Jerky** | on | Cooking rotten flesh in a **smoker** yields Zombie Jerky, a small always-edible snack (adds the item). |
 
 More on the way, one at a time.
 

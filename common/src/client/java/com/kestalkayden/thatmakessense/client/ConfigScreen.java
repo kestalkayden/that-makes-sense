@@ -235,6 +235,24 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.craftableNameTag.enabled.tooltip")),
                     cfg.craftableNameTag.enabled,
                     val -> ModConfig.get().craftableNameTag.enabled = val));
+
+            // ---- Rotten Flesh -> Leather ----
+            addHeader("thatmakessense.config.section.rottenFleshLeather");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.rottenFleshLeather.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.rottenFleshLeather.enabled.tooltip")),
+                    cfg.rottenFleshLeather.enabled,
+                    val -> ModConfig.get().rottenFleshLeather.enabled = val));
+
+            // ---- Zombie Jerky ----
+            addHeader("thatmakessense.config.section.zombieJerky");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.zombieJerky.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.zombieJerky.enabled.tooltip")),
+                    cfg.zombieJerky.enabled,
+                    val -> ModConfig.get().zombieJerky.enabled = val));
         }
 
         private void addHeader(String langKey) {

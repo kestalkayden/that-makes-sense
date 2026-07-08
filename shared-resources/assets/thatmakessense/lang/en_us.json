@@ -57,5 +57,15 @@
 
   "thatmakessense.config.section.craftableNameTag": "Craftable Name Tag",
   "thatmakessense.config.craftableNameTag.enabled": "Name Tag Recipe",
-  "thatmakessense.config.craftableNameTag.enabled.tooltip": "Craft a name tag from 3 string, 2 paper, and 2 iron ingots on a crafting table."
+  "thatmakessense.config.craftableNameTag.enabled.tooltip": "Craft a name tag from 3 string, 2 paper, and 2 iron ingots on a crafting table.",
+
+  "thatmakessense.config.section.rottenFleshLeather": "Rotten Flesh → Leather",
+  "thatmakessense.config.rottenFleshLeather.enabled": "Smelt Rotten Flesh into Leather",
+  "thatmakessense.config.rottenFleshLeather.enabled.tooltip": "Smelting rotten flesh in a furnace yields leather.",
+
+  "thatmakessense.config.section.zombieJerky": "Zombie Jerky",
+  "thatmakessense.config.zombieJerky.enabled": "Smoke Rotten Flesh into Zombie Jerky",
+  "thatmakessense.config.zombieJerky.enabled.tooltip": "Cooking rotten flesh in a smoker yields Zombie Jerky, a small always-edible snack.",
+
+  "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }
