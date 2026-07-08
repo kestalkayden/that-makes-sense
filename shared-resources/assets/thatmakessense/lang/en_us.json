@@ -53,5 +53,9 @@
 
   "thatmakessense.config.section.noEnderPearlDamage": "No Ender Pearl Damage",
   "thatmakessense.config.noEnderPearlDamage.enabled": "Ender Pearls Don't Hurt",
-  "thatmakessense.config.noEnderPearlDamage.enabled.tooltip": "Throwing an ender pearl no longer deals the teleport (fall) damage on arrival."
+  "thatmakessense.config.noEnderPearlDamage.enabled.tooltip": "Throwing an ender pearl no longer deals the teleport (fall) damage on arrival.",
+
+  "thatmakessense.config.section.craftableNameTag": "Craftable Name Tag",
+  "thatmakessense.config.craftableNameTag.enabled": "Name Tag Recipe",
+  "thatmakessense.config.craftableNameTag.enabled.tooltip": "Craft a name tag from 3 string, 2 paper, and 2 iron ingots on a crafting table."
 }

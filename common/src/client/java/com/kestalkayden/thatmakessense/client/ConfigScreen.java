@@ -226,6 +226,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.noEnderPearlDamage.enabled.tooltip")),
                     cfg.noEnderPearlDamage.enabled,
                     val -> ModConfig.get().noEnderPearlDamage.enabled = val));
+
+            // ---- Craftable Name Tag ----
+            addHeader("thatmakessense.config.section.craftableNameTag");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.craftableNameTag.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.craftableNameTag.enabled.tooltip")),
+                    cfg.craftableNameTag.enabled,
+                    val -> ModConfig.get().craftableNameTag.enabled = val));
         }
 
         private void addHeader(String langKey) {

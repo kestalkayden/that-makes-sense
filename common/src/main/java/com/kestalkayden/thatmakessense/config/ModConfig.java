@@ -125,6 +125,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public CraftableNameTag craftableNameTag = new CraftableNameTag();
+
+    /** A name tag can be crafted (3 string + 2 paper + 2 iron ingot). */
+    public static final class CraftableNameTag {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -233,6 +240,9 @@ public final class ModConfig {
         }
         if (noEnderPearlDamage == null) {
             noEnderPearlDamage = new NoEnderPearlDamage();
+        }
+        if (craftableNameTag == null) {
+            craftableNameTag = new CraftableNameTag();
         }
     }
 }

@@ -8,6 +8,7 @@
     "BlockMixin",
     "ChestBlockEntityMixin",
     "ChestBlockMixin",
+    "CraftingMenuMixin",
     "CreeperMixin",
     "EnchantmentMixin",
     "EndermanLeaveBlockGoalMixin",
