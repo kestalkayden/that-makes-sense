@@ -91,5 +91,9 @@
   "thatmakessense.config.bonemealExtras.enabled": "Bonemeal Nether Wart, Cactus & Sugar Cane",
   "thatmakessense.config.bonemealExtras.enabled.tooltip": "Bonemeal grows nether wart, and adds a segment to cactus and sugar cane (up to their natural height).",
 
+  "thatmakessense.config.section.stableVillagerPrices": "Stable Villager Prices",
+  "thatmakessense.config.stableVillagerPrices.enabled": "Prices Don't Inflate from Demand",
+  "thatmakessense.config.stableVillagerPrices.enabled.tooltip": "Villager trade prices stop climbing when a trade is used heavily. Discounts (Hero of the Village, curing a zombie villager) still apply.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

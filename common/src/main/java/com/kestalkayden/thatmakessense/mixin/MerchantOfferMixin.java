@@ -10,6 +10,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.kestalkayden.thatmakessense.config.ModConfig;
 
+import net.minecraft.util.Mth;
+import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 
 /**
@@ -31,6 +33,9 @@ public abstract class MerchantOfferMixin {
     @Final
     private int maxUses;
 
+    @Shadow
+    private int specialPriceDiff;
+
     private static int thatmakessense$multiplier() {
         ModConfig.VillagerStock cfg = ModConfig.get().villagerStock;
         return cfg.enabled ? Math.max(1, cfg.multiplier) : 1;
@@ -50,6 +55,15 @@ public abstract class MerchantOfferMixin {
         if (mult > 1) {
             this.uses = this.maxUses * mult;
             ci.cancel();
+        }
+    }
+
+    @Inject(method = "getModifiedCostCount", at = @At("HEAD"), cancellable = true)
+    private void thatmakessense$stableVillagerPrices(ItemCost cost, CallbackInfoReturnable<Integer> cir) {
+        // Drop the demand-driven surcharge but keep discounts (specialPriceDiff, e.g. Hero of the Village).
+        if (ModConfig.get().stableVillagerPrices.enabled) {
+            int basePrice = cost.count();
+            cir.setReturnValue(Mth.clamp(basePrice + this.specialPriceDiff, 1, cost.itemStack().getMaxStackSize()));
         }
     }
 }

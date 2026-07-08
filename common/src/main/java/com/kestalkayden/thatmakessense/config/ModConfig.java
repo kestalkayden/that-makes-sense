@@ -190,6 +190,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public StableVillagerPrices stableVillagerPrices = new StableVillagerPrices();
+
+    /** Villager trade prices stop climbing from demand (heavy-use inflation); discounts still apply. */
+    public static final class StableVillagerPrices {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -322,6 +329,9 @@ public final class ModConfig {
         }
         if (bonemealExtras == null) {
             bonemealExtras = new BonemealExtras();
+        }
+        if (stableVillagerPrices == null) {
+            stableVillagerPrices = new StableVillagerPrices();
         }
     }
 }

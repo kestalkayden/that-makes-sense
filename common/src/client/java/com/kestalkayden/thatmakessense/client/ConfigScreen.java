@@ -298,6 +298,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.bonemealExtras.enabled.tooltip")),
                     cfg.bonemealExtras.enabled,
                     val -> ModConfig.get().bonemealExtras.enabled = val));
+
+            // ---- Stable Villager Prices ----
+            addHeader("thatmakessense.config.section.stableVillagerPrices");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.stableVillagerPrices.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.stableVillagerPrices.enabled.tooltip")),
+                    cfg.stableVillagerPrices.enabled,
+                    val -> ModConfig.get().stableVillagerPrices.enabled = val));
         }
 
         private void addHeader(String langKey) {
