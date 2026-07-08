@@ -255,6 +255,13 @@ public final class ModConfig {
         public int delayTicks = 0;
     }
 
+    public NoAnvilCap noAnvilCap = new NoAnvilCap();
+
+    /** Removes the anvil "Too Expensive!" level cap so pricey combines/repairs still produce a result. */
+    public static final class NoAnvilCap {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -414,6 +421,9 @@ public final class ModConfig {
         }
         if (fasterNetherPortal == null) {
             fasterNetherPortal = new FasterNetherPortal();
+        }
+        if (noAnvilCap == null) {
+            noAnvilCap = new NoAnvilCap();
         }
     }
 }

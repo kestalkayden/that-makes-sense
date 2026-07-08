@@ -379,6 +379,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.fasterNetherPortal.enabled.tooltip")),
                     cfg.fasterNetherPortal.enabled,
                     val -> ModConfig.get().fasterNetherPortal.enabled = val));
+
+            // ---- No Anvil Too Expensive Cap ----
+            addHeader("thatmakessense.config.section.noAnvilCap");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.noAnvilCap.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.noAnvilCap.enabled.tooltip")),
+                    cfg.noAnvilCap.enabled,
+                    val -> ModConfig.get().noAnvilCap.enabled = val));
         }
 
         private void addHeader(String langKey) {

@@ -127,5 +127,9 @@
   "thatmakessense.config.fasterNetherPortal.enabled": "Near-Instant Portal Travel",
   "thatmakessense.config.fasterNetherPortal.enabled.tooltip": "Cuts the wait before a nether portal sends you through (vanilla is ~4 seconds). Instant by default; set the delay in ticks in the config file.",
 
+  "thatmakessense.config.section.noAnvilCap": "No Anvil Cost Cap",
+  "thatmakessense.config.noAnvilCap.enabled": "Remove \"Too Expensive!\" Limit",
+  "thatmakessense.config.noAnvilCap.enabled.tooltip": "Anvils no longer refuse combines/repairs that cost 40+ levels. You still need enough levels to take the result.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }
