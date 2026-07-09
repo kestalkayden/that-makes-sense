@@ -2,7 +2,7 @@
 
 A collection of small quality-of-life tweaks that make Minecraft behave the way you'd expect — each one independently toggleable from an in-game config screen.
 
-Targets Minecraft 26.2 on Fabric and NeoForge.
+Targets Minecraft 26.1.2 on Fabric and NeoForge.
 
 ## Features
 
@@ -46,9 +46,9 @@ More on the way, one at a time.
 
 ## Requirements
 
-- Minecraft **26.2**
+- Minecraft **26.1.2**
 - Java **25**
-- Fabric Loader **0.18.4+** with **Fabric API** (and optionally **Mod Menu** for the config button), *or* NeoForge **26.2+**
+- Fabric Loader **0.18.4+** with **Fabric API** (and optionally **Mod Menu** for the config button), *or* NeoForge **26.1.2+**
 
 ## Configuration
 
