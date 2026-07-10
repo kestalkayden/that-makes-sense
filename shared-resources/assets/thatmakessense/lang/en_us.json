@@ -85,7 +85,7 @@
 
   "thatmakessense.config.section.villagerStock": "Villager Stock",
   "thatmakessense.config.villagerStock.enabled": "More Trade Stock",
-  "thatmakessense.config.villagerStock.enabled.tooltip": "Villagers sell each trade several times as often before it locks (4x by default; still restock). Change the multiplier in the config file. Server-authoritative.",
+  "thatmakessense.config.villagerStock.enabled.tooltip": "Villagers sell each trade several times as often before it locks (2x by default; still restock). Change the multiplier in the config file. Server-authoritative.",
 
   "thatmakessense.config.section.bonemealExtras": "Bonemeal Extras",
   "thatmakessense.config.bonemealExtras.enabled": "Bonemeal Nether Wart, Cactus & Sugar Cane",
