@@ -180,7 +180,7 @@ public final class ModConfig {
      */
     public static final class VillagerStock {
         public boolean enabled = true;
-        public int multiplier = 4;
+        public int multiplier = 2;
     }
 
     public BonemealExtras bonemealExtras = new BonemealExtras();
