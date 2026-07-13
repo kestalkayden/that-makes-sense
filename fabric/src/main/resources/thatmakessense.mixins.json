@@ -27,6 +27,7 @@
     "PhantomSpawnerMixin",
     "ProjectileWeaponItemMixin",
     "TamableAnimalMixin",
+    "TreeGrowerMixin",
     "VillagerMixin"
   ],
   "client": [
