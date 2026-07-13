@@ -131,5 +131,9 @@
   "thatmakessense.config.noAnvilCap.enabled": "Remove \"Too Expensive!\" Limit",
   "thatmakessense.config.noAnvilCap.enabled.tooltip": "Anvils no longer refuse combines/repairs that cost 40+ levels. You still need enough levels to take the result.",
 
+  "thatmakessense.config.section.megaTrees": "Mega Trees",
+  "thatmakessense.config.megaTrees.enabled": "2x2 Saplings Grow Giant Trees",
+  "thatmakessense.config.megaTrees.enabled.tooltip": "Planting 2x2 saplings grows a giant tree for species vanilla doesn't cover (birch, oak, acacia, cherry), like jungle and spruce already do.",
+
   "item.thatmakessense.zombie_jerky": "Zombie Jerky"
 }

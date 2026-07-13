@@ -388,6 +388,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.noAnvilCap.enabled.tooltip")),
                     cfg.noAnvilCap.enabled,
                     val -> ModConfig.get().noAnvilCap.enabled = val));
+
+            // ---- Mega Trees ----
+            addHeader("thatmakessense.config.section.megaTrees");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.megaTrees.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.megaTrees.enabled.tooltip")),
+                    cfg.megaTrees.enabled,
+                    val -> ModConfig.get().megaTrees.enabled = val));
         }
 
         private void addHeader(String langKey) {

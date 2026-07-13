@@ -262,6 +262,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public MegaTrees megaTrees = new MegaTrees();
+
+    /** 2x2 saplings grow a giant tree for species vanilla doesn't cover (birch, oak, cherry). */
+    public static final class MegaTrees {
+        public boolean enabled = true;
+    }
+
     // -------------------------------------------------------------------------
     // Feature decision points
     // -------------------------------------------------------------------------
@@ -424,6 +431,9 @@ public final class ModConfig {
         }
         if (noAnvilCap == null) {
             noAnvilCap = new NoAnvilCap();
+        }
+        if (megaTrees == null) {
+            megaTrees = new MegaTrees();
         }
     }
 }
