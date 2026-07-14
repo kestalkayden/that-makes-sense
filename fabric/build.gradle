@@ -27,6 +27,9 @@ base {
 // thatmakessense.mixins.json compile here and are simply never loaded on a dedicated server.
 sourceSets.main.java.srcDir "${rootProject.projectDir}/common/src/main/java"
 sourceSets.main.java.srcDir "${rootProject.projectDir}/common/src/client/java"
+// Fabric's own client entrypoints (ThatMakesSenseFabricClient, ModMenuIntegration) formerly lived in
+// the split `client` source set; with no splitEnvironmentSourceSets() they must be pulled into main too.
+sourceSets.main.java.srcDir "${projectDir}/src/client/java"
 
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
