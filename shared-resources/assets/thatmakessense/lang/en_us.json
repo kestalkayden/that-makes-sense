@@ -55,6 +55,10 @@
   "thatmakessense.config.noEnderPearlDamage.enabled": "Ender Pearls Don't Hurt",
   "thatmakessense.config.noEnderPearlDamage.enabled.tooltip": "Throwing an ender pearl no longer deals the teleport (fall) damage on arrival.",
 
+  "thatmakessense.config.section.craftableNameTag": "Craftable Name Tag",
+  "thatmakessense.config.craftableNameTag.enabled": "Name Tag Recipe",
+  "thatmakessense.config.craftableNameTag.enabled.tooltip": "Craft a name tag from paper and an iron nugget on a crafting table (name tags aren't craftable in vanilla 1.21.1).",
+
   "thatmakessense.config.section.rottenFleshLeather": "Rotten Flesh → Leather",
   "thatmakessense.config.rottenFleshLeather.enabled": "Smelt Rotten Flesh into Leather",
   "thatmakessense.config.rottenFleshLeather.enabled.tooltip": "Smelting rotten flesh in a furnace yields leather.",

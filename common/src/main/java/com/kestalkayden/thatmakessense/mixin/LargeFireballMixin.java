@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import com.kestalkayden.thatmakessense.config.ModConfig;
 
-import net.minecraft.world.entity.projectile.hurtingprojectile.LargeFireball;
+import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.level.Level;
 
 /**
@@ -26,7 +26,8 @@ public abstract class LargeFireballMixin {
         at = @At(value = "INVOKE",
             target = "Lnet/minecraft/world/level/Level;explode("
                    + "Lnet/minecraft/world/entity/Entity;DDDFZ"
-                   + "Lnet/minecraft/world/level/Level$ExplosionInteraction;)V"),
+                   + "Lnet/minecraft/world/level/Level$ExplosionInteraction;)"
+                   + "Lnet/minecraft/world/level/Explosion;"),
         index = 6)
     private Level.ExplosionInteraction thatmakessense$noGhastFireballBlockDamage(Level.ExplosionInteraction original) {
         return ModConfig.get().noGhastFireballDamage.enabled ? Level.ExplosionInteraction.NONE : original;

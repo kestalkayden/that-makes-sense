@@ -18,6 +18,7 @@ plugins {
 
 rootProject.name = 'thatmakessense'
 
-include 'common'
+// 'common' is not a subproject on 1.21.1 (unlike the 26.x branches' NeoForm purity gate) — its
+// sources are pulled into each loader via srcDir (see fabric/build.gradle and neoforge/build.gradle).
 include 'fabric'
 include 'neoforge'

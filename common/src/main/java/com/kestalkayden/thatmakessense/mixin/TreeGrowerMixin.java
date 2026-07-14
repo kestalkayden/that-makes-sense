@@ -8,8 +8,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import com.kestalkayden.thatmakessense.config.ModConfig;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -45,7 +45,7 @@ public abstract class TreeGrowerMixin {
         if (path != null) {
             cir.setReturnValue(ResourceKey.create(
                     Registries.CONFIGURED_FEATURE,
-                    Identifier.fromNamespaceAndPath("thatmakessense", path)));
+                    ResourceLocation.fromNamespaceAndPath("thatmakessense", path)));
         }
     }
 }

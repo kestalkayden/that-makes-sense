@@ -7,7 +7,7 @@ import com.kestalkayden.thatmakessense.config.ModConfig;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.OptionInstance;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.ContainerObjectSelectionList;
@@ -67,7 +67,7 @@ public class ConfigScreen extends Screen {
 
     @Override
     public void onClose() {
-        minecraft.gui.setScreen(parent);
+        minecraft.setScreen(parent);
     }
 
     /**
@@ -88,7 +88,6 @@ public class ConfigScreen extends Screen {
 
         private static final int ROW_WIDTH = 310;
         private static final int OPTION_ROW_HEIGHT = 25;
-        private static final int HEADER_ROW_HEIGHT = 18;
 
         ConfigList(Minecraft minecraft, int screenWidth) {
             super(minecraft, screenWidth, 0, 0, OPTION_ROW_HEIGHT);
@@ -226,6 +225,15 @@ public class ConfigScreen extends Screen {
                             Component.translatable("thatmakessense.config.noEnderPearlDamage.enabled.tooltip")),
                     cfg.noEnderPearlDamage.enabled,
                     val -> ModConfig.get().noEnderPearlDamage.enabled = val));
+
+            // ---- Craftable Name Tag ----
+            addHeader("thatmakessense.config.section.craftableNameTag");
+            addOption(OptionInstance.createBoolean(
+                    "thatmakessense.config.craftableNameTag.enabled",
+                    OptionInstance.cachedConstantTooltip(
+                            Component.translatable("thatmakessense.config.craftableNameTag.enabled.tooltip")),
+                    cfg.craftableNameTag.enabled,
+                    val -> ModConfig.get().craftableNameTag.enabled = val));
 
             // ---- Rotten Flesh -> Leather ----
             addHeader("thatmakessense.config.section.rottenFleshLeather");
@@ -400,11 +408,15 @@ public class ConfigScreen extends Screen {
         }
 
         private void addHeader(String langKey) {
-            addEntry(new HeaderEntry(Component.translatable(langKey), minecraft), HEADER_ROW_HEIGHT);
+            // 1.21.1's AbstractSelectionList has one fixed itemHeight for every row (set in the
+            // constructor above) - unlike the source version, header rows can no longer be shorter
+            // than option rows. The header text is still vertically centred within whatever row
+            // height the list gives it, via HeaderEntry#render below.
+            addEntry(new HeaderEntry(Component.translatable(langKey), minecraft));
         }
 
         private void addOption(OptionInstance<?> option) {
-            addEntry(new OptionEntry(option, minecraft), OPTION_ROW_HEIGHT);
+            addEntry(new OptionEntry(option, minecraft));
         }
 
         // =====================================================================
@@ -423,16 +435,17 @@ public class ConfigScreen extends Screen {
             }
 
             @Override
-            public void extractContent(
-                    GuiGraphicsExtractor graphics,
+            public void render(
+                    GuiGraphics graphics,
+                    int index, int top, int left, int width, int height,
                     int mouseX, int mouseY,
                     boolean hovered,
-                    float a) {
+                    float partialTick) {
                 int textWidth = this.widget.getWidth();
-                int centreX = this.getContentXMiddle() - textWidth / 2;
-                int centreY = this.getContentY() + (this.getContentHeight() - 9) / 2;
+                int centreX = left + (width - textWidth) / 2;
+                int centreY = top + (height - 9) / 2;
                 this.widget.setPosition(centreX, centreY);
-                this.widget.extractRenderState(graphics, mouseX, mouseY, a);
+                this.widget.render(graphics, mouseX, mouseY, partialTick);
             }
 
             @Override
@@ -455,14 +468,15 @@ public class ConfigScreen extends Screen {
             }
 
             @Override
-            public void extractContent(
-                    GuiGraphicsExtractor graphics,
+            public void render(
+                    GuiGraphics graphics,
+                    int index, int top, int left, int width, int height,
                     int mouseX, int mouseY,
                     boolean hovered,
-                    float a) {
-                int widgetX = this.getContentXMiddle() - this.widget.getWidth() / 2;
-                this.widget.setPosition(widgetX, this.getContentY());
-                this.widget.extractRenderState(graphics, mouseX, mouseY, a);
+                    float partialTick) {
+                int widgetX = left + (width - this.widget.getWidth()) / 2;
+                this.widget.setPosition(widgetX, top);
+                this.widget.render(graphics, mouseX, mouseY, partialTick);
             }
 
             @Override

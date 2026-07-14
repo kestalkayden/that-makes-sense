@@ -8,12 +8,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import com.kestalkayden.thatmakessense.config.ModConfig;
 
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 /**
  * Totem of Undying from Inventory. Vanilla only consumes a death-protection item held in a hand;
@@ -24,6 +24,10 @@ import net.minecraft.world.item.ItemStack;
  * {@code checkTotemDeathProtection} consume it and apply the exact effect, then restores the previous
  * off-hand item and returns any leftover to the inventory. Runs server-side (the method is only
  * invoked on the authoritative side). Skips when a hand already holds a totem, so it never double-dips.
+ *
+ * <p>1.21.1 has no generic "death protection" data component yet - vanilla's own
+ * {@code checkTotemDeathProtection} hard-codes an {@code ItemStack.is(Items.TOTEM_OF_UNDYING)} check
+ * per hand, so this mirrors that exact check rather than a component lookup.
  */
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
@@ -34,15 +38,15 @@ public abstract class LivingEntityMixin {
             return original.call(source);
         }
         // A hand already carries a totem: let vanilla handle it (no double-dipping).
-        if (player.getMainHandItem().has(DataComponents.DEATH_PROTECTION)
-                || player.getOffhandItem().has(DataComponents.DEATH_PROTECTION)) {
+        if (player.getMainHandItem().is(Items.TOTEM_OF_UNDYING)
+                || player.getOffhandItem().is(Items.TOTEM_OF_UNDYING)) {
             return original.call(source);
         }
 
-        NonNullList<ItemStack> items = player.getInventory().getNonEquipmentItems();
+        NonNullList<ItemStack> items = player.getInventory().items;
         int slot = -1;
         for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).has(DataComponents.DEATH_PROTECTION)) {
+            if (items.get(i).is(Items.TOTEM_OF_UNDYING)) {
                 slot = i;
                 break;
             }

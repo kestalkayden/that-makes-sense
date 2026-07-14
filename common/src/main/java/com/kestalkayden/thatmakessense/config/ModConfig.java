@@ -125,6 +125,13 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public CraftableNameTag craftableNameTag = new CraftableNameTag();
+
+    /** A name tag can be crafted (paper + an iron nugget), matching vanilla 26.x's recipe shape. */
+    public static final class CraftableNameTag {
+        public boolean enabled = true;
+    }
+
     public RottenFleshLeather rottenFleshLeather = new RottenFleshLeather();
 
     /** Smelting rotten flesh in a furnace yields leather. */
@@ -199,7 +206,7 @@ public final class ModConfig {
 
     public LongerLeads longerLeads = new LongerLeads();
 
-    /** Leads break at {@code distance} blocks instead of vanilla's 12 (elastic pull still starts at 6). */
+    /** Leads break at {@code distance} blocks instead of vanilla's 10 (elastic pull still starts at 6). */
     public static final class LongerLeads {
         public boolean enabled = true;
         public double distance = 24.0;
@@ -377,6 +384,9 @@ public final class ModConfig {
         }
         if (noEnderPearlDamage == null) {
             noEnderPearlDamage = new NoEnderPearlDamage();
+        }
+        if (craftableNameTag == null) {
+            craftableNameTag = new CraftableNameTag();
         }
         if (rottenFleshLeather == null) {
             rottenFleshLeather = new RottenFleshLeather();

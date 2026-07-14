@@ -2,11 +2,11 @@ package com.kestalkayden.thatmakessense.client;
 
 import com.kestalkayden.thatmakessense.config.ModConfig;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
-import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -31,7 +31,7 @@ public class HideArmorButton extends AbstractButton {
     }
 
     @Override
-    public void onPress(InputWithModifiers input) {
+    public void onPress() {
         ModConfig cfg = ModConfig.get();
         cfg.hideArmor.hidden = !cfg.hideArmor.hidden;
         ModConfig.save();
@@ -47,16 +47,23 @@ public class HideArmorButton extends AbstractButton {
     }
 
     @Override
-    protected void extractContents(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a) {
-        extractDefaultSprite(graphics);
+    protected void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        // Draws the default vanilla button sprite background; renderString() is overridden below to a
+        // no-op so the translatable message (kept for tooltip/narration) never paints text over the icon.
+        super.renderWidget(guiGraphics, mouseX, mouseY, partialTick);
         int iconX = getX() + (getWidth() - 16) / 2;
         int iconY = getY() + (getHeight() - 16) / 2;
-        graphics.item(HELMET_ICON, iconX, iconY);
+        guiGraphics.renderItem(HELMET_ICON, iconX, iconY);
         if (ModConfig.get().hideArmor.hidden) {
             for (int i = 0; i < 16; i++) {
-                graphics.fill(iconX + i, iconY + i, iconX + i + 2, iconY + i + 2, SLASH_COLOR);
+                guiGraphics.fill(iconX + i, iconY + i, iconX + i + 2, iconY + i + 2, SLASH_COLOR);
             }
         }
+    }
+
+    @Override
+    public void renderString(GuiGraphics guiGraphics, Font font, int color) {
+        // Icon-only button: suppress the default AbstractButton label text.
     }
 
     @Override

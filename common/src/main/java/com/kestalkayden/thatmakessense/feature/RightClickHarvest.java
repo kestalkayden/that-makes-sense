@@ -67,7 +67,7 @@ public final class RightClickHarvest {
         List<ItemStack> drops = Block.getDrops(state, level, pos, level.getBlockEntity(pos), player, player.getMainHandItem());
 
         // Withhold one replant item (the crop's pick-block form) so the net matches break + replant.
-        ItemStack seed = state.getCloneItemStack(level, pos, false);
+        ItemStack seed = state.getBlock().getCloneItemStack(level, pos, state);
         if (!seed.isEmpty()) {
             for (ItemStack drop : drops) {
                 if (!drop.isEmpty() && ItemStack.isSameItem(drop, seed)) {

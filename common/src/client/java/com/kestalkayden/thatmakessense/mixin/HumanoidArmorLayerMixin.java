@@ -11,42 +11,47 @@ import com.kestalkayden.thatmakessense.config.ModConfig;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
-import net.minecraft.client.renderer.entity.state.AvatarRenderState;
-import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+import net.minecraft.world.entity.LivingEntity;
 
 /**
  * Hide Armor (client-side, your own model only).
  *
- * <p>{@link HumanoidArmorLayer#submit} is the layer that draws all four armor pieces for any humanoid.
- * When the feature is on and toggled hidden, we cancel it for the local player only - identified by
- * matching the render state's entity id ({@link AvatarRenderState#id}, set from {@code entity.getId()})
- * against the client player's id. The armor stays fully equipped and protective; this only changes what
- * you see (third-person view and the inventory paperdoll). Other players and mobs render normally, and
- * other clients still see your armor.
+ * <p>{@link HumanoidArmorLayer#render(PoseStack, MultiBufferSource, int, LivingEntity, float, float,
+ * float, float, float, float)} is the layer that draws all four armor pieces for any humanoid. Unlike
+ * later versions that render off a detached "render state" snapshot, 1.21.1 hands the layer the live
+ * {@link LivingEntity} directly, so we identify the local player by comparing entity ids against the
+ * client player. When the feature is on and toggled hidden, we cancel it for the local player only -
+ * the armor stays fully equipped and protective, this only changes what you see (third-person view and
+ * the inventory paperdoll). Other players and mobs render normally, and other clients still see your
+ * armor.
  */
 @Mixin(HumanoidArmorLayer.class)
 public class HumanoidArmorLayerMixin {
 
-    @Inject(method = "submit", at = @At("HEAD"), cancellable = true)
+    @Inject(
+        method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFFFFF)V",
+        at = @At("HEAD"), cancellable = true)
     private void thatmakessense$hideOwnArmor(
             PoseStack poseStack,
-            SubmitNodeCollector submitNodeCollector,
-            int lightCoords,
-            HumanoidRenderState state,
-            float yRot,
-            float xRot,
+            MultiBufferSource buffer,
+            int packedLight,
+            LivingEntity entity,
+            float limbSwing,
+            float limbSwingAmount,
+            float partialTick,
+            float ageInTicks,
+            float netHeadYaw,
+            float headPitch,
             CallbackInfo ci) {
         ModConfig.HideArmor cfg = ModConfig.get().hideArmor;
         if (!cfg.enabled || !cfg.hidden) {
             return;
         }
-        if (state instanceof AvatarRenderState avatar) {
-            LocalPlayer self = Minecraft.getInstance().player;
-            if (self != null && avatar.id == self.getId()) {
-                ci.cancel();
-            }
+        LocalPlayer self = Minecraft.getInstance().player;
+        if (self != null && entity.getId() == self.getId()) {
+            ci.cancel();
         }
     }
 }

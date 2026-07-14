@@ -9,7 +9,7 @@ import com.kestalkayden.thatmakessense.config.ModConfig;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LightningBolt;
-import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.entity.npc.Villager;
 
 /**
  * Villagers don't turn into witches when struck by lightning. Vanilla's {@code Villager.thunderHit}

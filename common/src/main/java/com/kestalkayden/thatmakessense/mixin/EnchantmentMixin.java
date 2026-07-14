@@ -10,7 +10,7 @@ import com.kestalkayden.thatmakessense.config.ModConfig;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -36,7 +36,7 @@ public abstract class EnchantmentMixin {
 
     @Unique
     private static final TagKey<Enchantment> THATMAKESSENSE$DAMAGE =
-            TagKey.create(Registries.ENCHANTMENT, Identifier.withDefaultNamespace("exclusive_set/damage"));
+            TagKey.create(Registries.ENCHANTMENT, ResourceLocation.withDefaultNamespace("exclusive_set/damage"));
 
     @Inject(method = "areCompatible", at = @At("HEAD"), cancellable = true)
     private static void thatmakessense$relaxCompatibility(

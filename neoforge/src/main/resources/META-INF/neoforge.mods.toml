@@ -14,20 +14,20 @@ authors="Kestalkayden"
 displayURL="https://github.com/kestalkayden/that-makes-sense"
 logoFile="assets/thatmakessense/icon.png"
 
-# Copper Chest Rows applies a shared mixin (No Crop Trample uses FarmlandTrampleEvent instead).
+# Shared SpongePowered mixin config (main + client mixins).
 [[mixins]]
 config="thatmakessense.mixins.json"
 
 [[dependencies.thatmakessense]]
 modId="neoforge"
 type="required"
-versionRange="[26.2.0.0-beta,)"
+versionRange="[21.1.234,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.thatmakessense]]
 modId="minecraft"
 type="required"
-versionRange="[26.2,26.3)"
+versionRange="[1.21.1,1.21.2)"
 ordering="NONE"
 side="BOTH"
