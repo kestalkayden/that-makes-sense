@@ -18,6 +18,8 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -38,9 +40,13 @@ public class ThatMakesSenseFabric implements ModInitializer {
         // tweaks by their mixins. Those all consult ModConfig at runtime.
 
         // Zombie Jerky item (output of the Rotten Flesh -> Smoker recipe).
+        // 1.21.8 requires the Item.Properties to carry its own id (via setId) before construction -
+        // the Item constructor now eagerly derives its description id, rather than that being resolved
+        // lazily from the registry key Registry.register binds it under afterwards.
         ResourceLocation jerkyId = ResourceLocation.fromNamespaceAndPath(MOD_ID, TmsItems.ZOMBIE_JERKY_PATH);
-        TmsItems.zombieJerky = Registry.register(BuiltInRegistries.ITEM, jerkyId,
-            new Item(new Item.Properties().food(TmsItems.zombieJerkyFood())));
+        ResourceKey<Item> jerkyKey = ResourceKey.create(Registries.ITEM, jerkyId);
+        TmsItems.zombieJerky = Registry.register(BuiltInRegistries.ITEM, jerkyKey,
+            new Item(new Item.Properties().food(TmsItems.zombieJerkyFood()).setId(jerkyKey)));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS)
             .register(entries -> entries.accept(new ItemStack(TmsItems.zombieJerky)));
 

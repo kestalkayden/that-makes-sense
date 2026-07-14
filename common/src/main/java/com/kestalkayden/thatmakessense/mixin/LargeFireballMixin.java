@@ -26,8 +26,7 @@ public abstract class LargeFireballMixin {
         at = @At(value = "INVOKE",
             target = "Lnet/minecraft/world/level/Level;explode("
                    + "Lnet/minecraft/world/entity/Entity;DDDFZ"
-                   + "Lnet/minecraft/world/level/Level$ExplosionInteraction;)"
-                   + "Lnet/minecraft/world/level/Explosion;"),
+                   + "Lnet/minecraft/world/level/Level$ExplosionInteraction;)V"),
         index = 6)
     private Level.ExplosionInteraction thatmakessense$noGhastFireballBlockDamage(Level.ExplosionInteraction original) {
         return ModConfig.get().noGhastFireballDamage.enabled ? Level.ExplosionInteraction.NONE : original;

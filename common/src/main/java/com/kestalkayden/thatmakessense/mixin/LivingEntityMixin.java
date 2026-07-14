@@ -43,7 +43,9 @@ public abstract class LivingEntityMixin {
             return original.call(source);
         }
 
-        NonNullList<ItemStack> items = player.getInventory().items;
+        // 1.21.8 made Inventory.items private; getNonEquipmentItems() returns that same backing list
+        // (the 36 main slots, not equipment), so in-place mutation below still reaches the real inventory.
+        NonNullList<ItemStack> items = player.getInventory().getNonEquipmentItems();
         int slot = -1;
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).is(Items.TOTEM_OF_UNDYING)) {

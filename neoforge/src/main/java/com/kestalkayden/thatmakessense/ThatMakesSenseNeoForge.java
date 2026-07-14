@@ -13,6 +13,8 @@ import com.kestalkayden.thatmakessense.feature.RightClickHarvest;
 import com.kestalkayden.thatmakessense.feature.TmsItems;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -39,10 +41,18 @@ public class ThatMakesSenseNeoForge {
 
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, MOD_ID);
 
-    /** Zombie Jerky item (output of the Rotten Flesh -> Smoker recipe). */
+    /**
+     * Zombie Jerky item (output of the Rotten Flesh -> Smoker recipe).
+     *
+     * <p>1.21.8 requires the {@code Item.Properties} to carry its own id (via {@code setId}) before
+     * construction - the {@code Item} constructor now eagerly derives its description id, rather than
+     * that being resolved lazily from the registry key it's registered under.
+     */
     public static final DeferredHolder<Item, Item> ZOMBIE_JERKY = ITEMS.register(
         TmsItems.ZOMBIE_JERKY_PATH,
-        () -> new Item(new Item.Properties().food(TmsItems.zombieJerkyFood())));
+        () -> new Item(new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, TmsItems.ZOMBIE_JERKY_PATH)))
+            .food(TmsItems.zombieJerkyFood())));
 
     public ThatMakesSenseNeoForge(ModContainer container, IEventBus modBus) {
         LOGGER.info("Initializing That Makes Sense (NeoForge)");

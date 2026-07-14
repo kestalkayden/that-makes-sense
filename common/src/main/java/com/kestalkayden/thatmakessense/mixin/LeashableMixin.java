@@ -1,33 +1,33 @@
 package com.kestalkayden.thatmakessense.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.Constant;
-import org.spongepowered.asm.mixin.injection.ModifyConstant;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.kestalkayden.thatmakessense.config.ModConfig;
 
 import net.minecraft.world.entity.Leashable;
 
 /**
- * Longer leads. 1.21.1 has no overridable {@code leashSnapDistance()} - the "too far" threshold is the
+ * Longer leads. A lead snaps once the leashed entity gets past {@code leashSnapDistance()} - vanilla
+ * 12 blocks. 1.21.1 had no such overridable method; the "too far" threshold there was a
  * {@code LEASH_TOO_FAR_DIST} constant (10.0) inlined directly into the body of the static
- * {@link Leashable#tickLeash}, which compares the holder distance against it and drops the leash once
- * past it. We modify that inlined constant instead: raising it lets mobs wander further before the
- * lead snaps. The elastic pull-back distance ({@code LEASH_ELASTIC_DIST}, 6 blocks) is a separate
- * constant in the same method and is left untouched, so it's simply more rope. Mobs that override the
- * leash-distance behaviour entirely (e.g. happy ghasts, via {@code handleLeashAtDistance}) are
- * unaffected, matching the original intent. Leash logic runs server-side.
+ * {@code Leashable.tickLeash}. 1.21.8 factored that comparison out into this default method (now 12.0),
+ * so we override it directly instead of modifying an inlined constant. Raising that default lets mobs
+ * wander further before the lead snaps; the elastic pull-back ({@code leashElasticDistance()}, 6
+ * blocks) is untouched, so it's simply more rope. Mobs that override the snap distance entirely (e.g.
+ * happy ghasts) keep their own. Leash logic runs server-side.
  */
 @Mixin(Leashable.class)
 public interface LeashableMixin {
 
-    @ModifyConstant(method = "tickLeash", constant = @Constant(doubleValue = 10.0D))
-    private static double thatmakessense$longerLeads(double original) {
+    @Inject(method = "leashSnapDistance", at = @At("HEAD"), cancellable = true)
+    private void thatmakessense$longerLeads(CallbackInfoReturnable<Double> cir) {
         ModConfig.LongerLeads cfg = ModConfig.get().longerLeads;
         if (cfg.enabled) {
             // Never shorter than vanilla, so a stray small config value can't make leads worse.
-            return Math.max(cfg.distance, 10.0);
+            cir.setReturnValue(Math.max(cfg.distance, 12.0));
         }
-        return original;
     }
 }

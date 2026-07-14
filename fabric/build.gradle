@@ -1,21 +1,9 @@
-// Loom 1.7.4 is applied via the legacy buildscript classpath, not the `plugins {}` DSL.
-// The Fabric maven only publishes plugin markers for loom 1.14.0+, and loom 1.14+ added a
-// notObfuscated() guard that trips on obfuscated 1.21.1 (those builds target the 26.x
-// non-obfuscated game). Loom 1.7.4 has no such guard and builds obfuscated 1.21.1 but ships
-// no plugin marker, so we pull its main artifact directly on the buildscript classpath.
-buildscript {
-    repositories {
-        maven { url = 'https://maven.fabricmc.net/' }
-        mavenCentral()
-        gradlePluginPortal()
-    }
-    dependencies {
-        classpath "net.fabricmc:fabric-loom:${loom_version}"
-    }
+// Loom 1.11 builds obfuscated 1.21.8 (guard-free) and has a plugin marker, so it applies via the
+// normal plugins {} DSL — no legacy buildscript classpath hack (unlike the 1.21.1 branch's loom 1.7.4).
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+    id 'maven-publish'
 }
-
-apply plugin: 'fabric-loom'
-apply plugin: 'maven-publish'
 
 base {
     archivesName = "${project.archives_base_name}-fabric"

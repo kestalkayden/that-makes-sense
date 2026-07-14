@@ -21,13 +21,13 @@ config="thatmakessense.mixins.json"
 [[dependencies.thatmakessense]]
 modId="neoforge"
 type="required"
-versionRange="[21.1.234,)"
+versionRange="[21.8.0,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.thatmakessense]]
 modId="minecraft"
 type="required"
-versionRange="[1.21.1,1.21.2)"
+versionRange="[1.21.8,1.21.9)"
 ordering="NONE"
 side="BOTH"
