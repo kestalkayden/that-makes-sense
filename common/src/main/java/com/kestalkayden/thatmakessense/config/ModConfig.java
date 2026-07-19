@@ -3,6 +3,8 @@ package com.kestalkayden.thatmakessense.config;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -176,7 +178,7 @@ public final class ModConfig {
 
     /**
      * Villagers sell each trade {@code multiplier} times as often before it locks (they still restock).
-     * {@code multiplier} is edit-in-file (defaults to 4x); the screen exposes only the on/off toggle.
+     * {@code multiplier} is edit-in-file (defaults to 2x); the screen exposes only the on/off toggle.
      */
     public static final class VillagerStock {
         public boolean enabled = true;
@@ -337,103 +339,28 @@ public final class ModConfig {
         }
     }
 
-    /** Replace any null nested object (e.g. a partial or older JSON file) with its default. */
+    /**
+     * Replace any null nested category (a partial or hand-edited JSON file, or one written before a
+     * feature existed) with its default, so every field above is non-null once loading finishes.
+     *
+     * <p>Reflective on purpose: a new feature category is covered the moment its field is declared,
+     * with nothing to remember to update here. Only fields whose type is a category class declared
+     * in this file are touched - statics and any future scalar field are left alone.
+     */
     private void fillMissing() {
-        if (noCropTrample == null) {
-            noCropTrample = new NoCropTrample();
-        }
-        if (silkTouchBudding == null) {
-            silkTouchBudding = new SilkTouchBudding();
-        }
-        if (enchantmentTweaks == null) {
-            enchantmentTweaks = new EnchantmentTweaks();
-        }
-        if (blackstoneRecipe == null) {
-            blackstoneRecipe = new BlackstoneRecipe();
-        }
-        if (doubleDoors == null) {
-            doubleDoors = new DoubleDoors();
-        }
-        if (noBerryDamage == null) {
-            noBerryDamage = new NoBerryDamage();
-        }
-        if (rightClickHarvest == null) {
-            rightClickHarvest = new RightClickHarvest();
-        }
-        if (noCreeperBlockDamage == null) {
-            noCreeperBlockDamage = new NoCreeperBlockDamage();
-        }
-        if (noEndermanGriefing == null) {
-            noEndermanGriefing = new NoEndermanGriefing();
-        }
-        if (totemFromInventory == null) {
-            totemFromInventory = new TotemFromInventory();
-        }
-        if (disablePhantoms == null) {
-            disablePhantoms = new DisablePhantoms();
-        }
-        if (noPetTeleportDamage == null) {
-            noPetTeleportDamage = new NoPetTeleportDamage();
-        }
-        if (noEnderPearlDamage == null) {
-            noEnderPearlDamage = new NoEnderPearlDamage();
-        }
-        if (rottenFleshLeather == null) {
-            rottenFleshLeather = new RottenFleshLeather();
-        }
-        if (zombieJerky == null) {
-            zombieJerky = new ZombieJerky();
-        }
-        if (stackableTotems == null) {
-            stackableTotems = new StackableTotems();
-        }
-        if (hideArmor == null) {
-            hideArmor = new HideArmor();
-        }
-        if (noGhastFireballDamage == null) {
-            noGhastFireballDamage = new NoGhastFireballDamage();
-        }
-        if (cobwebShears == null) {
-            cobwebShears = new CobwebShears();
-        }
-        if (villagerStock == null) {
-            villagerStock = new VillagerStock();
-        }
-        if (bonemealExtras == null) {
-            bonemealExtras = new BonemealExtras();
-        }
-        if (stableVillagerPrices == null) {
-            stableVillagerPrices = new StableVillagerPrices();
-        }
-        if (longerLeads == null) {
-            longerLeads = new LongerLeads();
-        }
-        if (infinityAllArrows == null) {
-            infinityAllArrows = new InfinityAllArrows();
-        }
-        if (healParrots == null) {
-            healParrots = new HealParrots();
-        }
-        if (petProtection == null) {
-            petProtection = new PetProtection();
-        }
-        if (noPetFallDamage == null) {
-            noPetFallDamage = new NoPetFallDamage();
-        }
-        if (noVillagerWitch == null) {
-            noVillagerWitch = new NoVillagerWitch();
-        }
-        if (chestsUnderBlocks == null) {
-            chestsUnderBlocks = new ChestsUnderBlocks();
-        }
-        if (fasterNetherPortal == null) {
-            fasterNetherPortal = new FasterNetherPortal();
-        }
-        if (noAnvilCap == null) {
-            noAnvilCap = new NoAnvilCap();
-        }
-        if (megaTrees == null) {
-            megaTrees = new MegaTrees();
+        for (Field field : ModConfig.class.getDeclaredFields()) {
+            if (Modifier.isStatic(field.getModifiers())
+                    || field.getType().getEnclosingClass() != ModConfig.class) {
+                continue;
+            }
+            try {
+                if (field.get(this) == null) {
+                    field.set(this, field.getType().getDeclaredConstructor().newInstance());
+                }
+            } catch (ReflectiveOperationException e) {
+                // Unreachable while every category is a nested class with the implicit no-arg
+                // constructor; swallowed so a config quirk can never stop the game from starting.
+            }
         }
     }
 }
