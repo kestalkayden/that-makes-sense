@@ -87,9 +87,23 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+          # Without this every job resolves every dependency from scratch, so one flaky upstream
+          # maven turns a 4-branch release into 8 independent chances to fail.
+          cache: 'gradle'
       - uses: gradle/actions/wrapper-validation@v6
       - run: chmod +x ./gradlew
-      - run: ./gradlew :fabric:build --stacktrace
+      - name: build fabric
+        run: |
+          set -o pipefail
+          for i in 1 2 3; do
+            if ./gradlew :fabric:build --stacktrace 2>&1 | tee build.log; then exit 0; fi
+            # Only retry upstream-download flakiness; a real compile failure must fail on attempt 1
+            # rather than being re-run three times and buried in the log.
+            grep -qE "Could not (download|get resource)" build.log || exit 1
+            echo "::warning::transient dependency download failure, retry $i"
+            sleep $((i * 30))
+          done
+          exit 1
       - uses: actions/upload-artifact@v7
         with:
           name: fabric-jars
@@ -106,9 +120,21 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+          # Without this every job resolves every dependency from scratch, so one flaky upstream
+          # maven turns a 4-branch release into 8 independent chances to fail.
+          cache: 'gradle'
       - uses: gradle/actions/wrapper-validation@v6
       - run: chmod +x ./gradlew
-      - run: ./gradlew :neoforge:build --stacktrace
+      - name: build neoforge
+        run: |
+          set -o pipefail
+          for i in 1 2 3; do
+            if ./gradlew :neoforge:build --stacktrace 2>&1 | tee build.log; then exit 0; fi
+            grep -qE "Could not (download|get resource)" build.log || exit 1
+            echo "::warning::transient dependency download failure, retry $i"
+            sleep $((i * 30))
+          done
+          exit 1
       - uses: actions/upload-artifact@v7
         with:
           name: neoforge-jars

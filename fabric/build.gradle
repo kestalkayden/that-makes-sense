@@ -28,8 +28,10 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
 
-    // Config UI - Mod Menu opens the hand-built native config screen. Not bundled.
-    modImplementation "com.terraformersmc:modmenu:${modmenu_version}"
+    // Config UI - Mod Menu opens the hand-built native config screen. Not bundled. Sourced from
+    // Modrinth (see the repository comment in the root build.gradle); same jar, same
+    // `com.terraformersmc.modmenu.api` classes, so loom remaps it exactly as before.
+    modImplementation "maven.modrinth:modmenu:${modmenu_version}"
 }
 
 loom {
